@@ -71,6 +71,97 @@ public class ProblemSolvingTest {
 
   }
 
+  @Test
+  void testMaxLength_multipleWords1() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWords2() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWords3() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWords4() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWords5() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWord6s() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWords7() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWord8s() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWord9s() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+  @Test
+  void testMaxLength_multipleWords66() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+
+  }
+
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
