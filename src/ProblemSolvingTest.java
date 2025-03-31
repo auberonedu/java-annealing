@@ -68,11 +68,9 @@ public class ProblemSolvingTest {
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
-
-  @Test
-  void testMinLength() {
-    // TODO:
-    // Come up with ALL tests to thoroughly test minLength
-  }
+    
+  
+  // TODO:
+  // Come up with ALL tests to thoroughly test minLength
 
 }
