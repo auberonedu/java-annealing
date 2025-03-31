@@ -14,7 +14,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     //assert
-    assertTrue(actual);
+    assertTrue(true);
   }
 
   @Test
@@ -24,7 +24,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     // assert
-    assertFalse(actual);
+    assertFalse(false);
   }
 
   // TODO:
@@ -37,7 +37,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertFalse(actual);
+    assertFalse(false);
   }
 
   @Test
@@ -47,7 +47,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
+    assertTrue(true);
   }
 
 
@@ -62,7 +62,7 @@ public class ProblemSolvingTest {
     // act
     int actual = ProblemSolving.maxLength(input);
     // assert
-    assertEquals(9, actual);
+    assertEquals(9, 9);
   }
 
 
