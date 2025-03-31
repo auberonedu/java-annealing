@@ -42,7 +42,7 @@ jobs:
           MIN_TESTS=12
 
           if [ "$TEST_COUNT" -lt "$MIN_TESTS" ]; then
-            echo "❌ Only $TEST_COUNT tests were run. At least $MIN_TESTS tests are required."
+            echo "❌ Only $TEST_COUNT tests were run. At least $MIN_TESTS tests are required. Please write more unit tests"
             exit 1
           fi
 
