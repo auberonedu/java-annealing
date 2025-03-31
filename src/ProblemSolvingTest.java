@@ -159,7 +159,7 @@ public class ProblemSolvingTest {
     // act
     int actual = ProblemSolving.maxLength(input);
     // assert
-
+    assertFalse(true);
   }
 
 
