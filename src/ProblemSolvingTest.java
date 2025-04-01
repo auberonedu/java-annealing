@@ -27,10 +27,6 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-  // TODO:
-  // Come up with more tests to thoroughly test testAllStartWithA
-  // Suggestions:
-  //  - more you can think of!
   @Test
   void testAllStartWithA_emptySet() {
     // arrange
