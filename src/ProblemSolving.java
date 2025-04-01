@@ -14,8 +14,12 @@ public class ProblemSolving {
   public static boolean allStartWithA(Set<String> words) {
     if (words.isEmpty()) return true;
 
-    
-    return false;
+    for (String word : words) {
+      if (word == null || word.isEmpty() || Character.toLowerCase(word.charAt(0)) != 'a') {
+        return false;
+      }
+    }
+    return true;
   }
 
   /**
