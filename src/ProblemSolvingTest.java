@@ -75,6 +75,8 @@ public class ProblemSolvingTest {
     assertTrue(actual);  
   }
 
+//--------------------------------------------------------------------------------------------
+
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -95,12 +97,21 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testHasEmptyString_falseEmpty() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
 
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
-
+//---------------------------------------------------------------------------------------
   @Test
   void testMaxLength_multipleWords() {
     // arrange
