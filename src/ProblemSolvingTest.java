@@ -56,6 +56,16 @@ public class ProblemSolvingTest {
   }
 
   @Test
+  void testAllStartWithA_SingleElement() {
+    // arrange
+    Set<String> input = Set.of("chiikawa");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
