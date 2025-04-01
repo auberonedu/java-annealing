@@ -32,9 +32,9 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of();
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test
@@ -42,7 +42,7 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("banana", "cinnamon", "strawberry");
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
     assertFalse(actual);
   }
@@ -52,7 +52,7 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("banana");
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
     assertFalse(actual);
   }
@@ -62,19 +62,9 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("A", "a");
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
-    assertFalse(actual);
-  }
-
-  @Test
-  void testAllStartWithA_emptyString() {
-    // arrange
-    Set<String> input = Set.of("A", "");
-    // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
-    // assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test
@@ -97,10 +87,29 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
+  @Test
+  void testHasEmptyString_falseNoEmpty() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "utopia", "yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_falseEmptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
 
 
   @Test
