@@ -36,6 +36,16 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
   @Test
+  void testAllStartWithA_EmptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
