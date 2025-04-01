@@ -40,9 +40,9 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of();
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test
@@ -50,7 +50,7 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("hachiware", "usagi", "chiikawa");
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
     assertFalse(actual);
   }
@@ -60,9 +60,19 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("chiikawa");
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
     assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_upperCase() {
+    // arrange
+    Set<String> input = Set.of("Army", "A", "Astra");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);  
   }
 
   @Test
