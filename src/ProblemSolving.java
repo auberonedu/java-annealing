@@ -13,13 +13,17 @@ public class ProblemSolving {
    */
   public static boolean allStartWithA(Set<String> words) {
     boolean test = false;
-    for (String word : words)
+    int size = words.size();
+    int count = 0;
+    for (String word : words) {
+        if (word.startsWith("a") || word.startsWith("A")) {
+            count++;
+        }
+    }
+    if(count == size)
     {
-      if(word.startsWith("a") || word.startsWith("A"))
-      {
         test = true;
-      }
-    }  
+    }
     return test;
   }
 

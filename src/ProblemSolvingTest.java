@@ -41,7 +41,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     // assert
-    assertTrue(actual);
+    assertFalse(actual);
   }
   @Test
   void testAllStartWithA_singleLetters() {
@@ -140,11 +140,11 @@ public class ProblemSolvingTest {
   @Test
   void testMaxLength_sameSizes() {
     // arrange
-    Set<String> input = Set.of("test", "test", "test", "test");
+    Set<String> input = Set.of("test1", "test2", "test3", "test4");
     // act
     int actual = ProblemSolving.maxLength(input);
     // assert
-    assertEquals(4, actual);
+    assertEquals(5, actual);
   }
   
   // TODO:
@@ -163,7 +163,7 @@ public class ProblemSolvingTest {
   @Test
   void testMinLength_noStrings() {
     // arrange
-    Set<String> input = Set.of("", "", "", "");
+    Set<String> input = Set.of("");
     // act
     int actual = ProblemSolving.minLength(input);
     // assert
