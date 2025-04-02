@@ -28,24 +28,24 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-//   // TODO:
-//   // Come up with more tests to thoroughly test testAllStartWithA
-//   // Suggestions:
-//   //  - test an empty set
-//   //  - test a set where none start with A
-//   //  - test a set with only a single element
-//   //  - more you can think of!
-//   @Test
-//   void testAllStarWithA() {
-//     //arrange
-//     Set<String> input = Set.of();   
+  // TODO:
+  // Come up with more tests to thoroughly test testAllStartWithA
+  // Suggestions:
+  //  - test an empty set
+  //  - test a set where none start with A
+  //  - test a set with only a single element
+  //  - more you can think of!
+  @Test
+  void testAllStarWithA() {
+    //arrange
+    Set<String> input = Set.of();   
 
-//     //act
-//     boolean actual = ProblemSolving.allStartWithA(input);
+    //act
+    boolean actual = ProblemSolving.allStartWithA(input);
 
-//     //assert
-//     assertFalse(actual);
-//   }
+    //assert
+    assertFalse(actual);
+  }
 
 //   @Test
 //   void testHasEmptyString_falseAllNonEmpty() {
