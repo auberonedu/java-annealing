@@ -63,7 +63,25 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+
+    if(words.size() == 0){
+      return 0;
+    }
+
+    List<String> wordList = new ArrayList<>(words);
+    //set first index to longest length and check rest of the words to see if they are longer
+    // if the word is longer, set it to longest
+
+
+    int longest = wordList.get(0).length();
+
+    for(int i = 1; i < words.size(); i++){
+      if(wordList.get(i).length() > longest){
+        longest = wordList.get(i).length();
+      }
+    }
+
+    return longest;
   }
 
  /**
