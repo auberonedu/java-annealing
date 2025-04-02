@@ -166,6 +166,15 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);  
   }
 
+  @Test
+  void testMaxLength_empty() {
+    // arrange
+    Set<String> input = Set.of("chiikawa", "hachiware", "usagi", "");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(9, actual);  
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
