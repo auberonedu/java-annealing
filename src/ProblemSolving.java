@@ -97,6 +97,26 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
-  }
+
+    if (words == null || words.isEmpty()) {
+      return Integer.MAX_VALUE;
+    }
+
+    int shortestWord = Integer.MAX_VALUE;
+
+    for (var word : words) {
+
+      int holdingWordLength = word.length();
+
+      if (word.contains(" ")) {
+        holdingWordLength = word.length() - 1;
+      }
+
+      if (holdingWordLength < shortestWord) {
+        shortestWord = holdingWordLength;
+      }
+    }
+
+    return shortestWord;
+    }
 }

@@ -233,10 +233,6 @@ public class ProblemSolvingTest {
   }
 
   // TODO:
-  // Come up with more tests to thoroughly test maxLength
-  // Use your creativity here!
-
-  // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
