@@ -12,7 +12,18 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
+
+    if (words == null || words.isEmpty()) {
+      return true;
+    }
+
+    for (var word : words) {
+      if (!word.startsWith(String.valueOf('a')) && !word.startsWith(String.valueOf('A'))) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   /**
@@ -24,6 +35,17 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+
+    if (words == null || words.isEmpty()) {
+      return false;
+    }
+
+    for (var word : words) {
+      if (word.isEmpty()) {
+        return true;
+      }
+    }
+
     return false;
   }
 
@@ -36,7 +58,27 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+
+    if (words == null || words.isEmpty()) {
+      return 0;
+    }
+
+    int longestWord = 0;
+
+    for (var word : words) {
+
+      int holdingWordLength = word.length();
+
+      if (word.contains(" ")) {
+        holdingWordLength = word.length() - 1;
+      }
+
+      if (holdingWordLength > longestWord) {
+        longestWord = holdingWordLength;
+      }
+    }
+
+    return longestWord;
   }
 
  /**
@@ -48,6 +90,26 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
-  }
+
+    if (words == null || words.isEmpty()) {
+      return Integer.MAX_VALUE;
+    }
+
+    int shortestWord = Integer.MAX_VALUE;
+
+    for (var word : words) {
+
+      int holdingWordLength = word.length();
+
+      if (word.contains(" ")) {
+        holdingWordLength = word.length() - 1;
+      }
+
+      if (holdingWordLength < shortestWord) {
+        shortestWord = holdingWordLength;
+      }
+    }
+
+    return shortestWord;
+    }
 }
