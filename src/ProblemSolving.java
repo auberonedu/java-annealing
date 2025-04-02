@@ -12,7 +12,26 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
+
+    for (String word : words) {
+        if (word.isEmpty()) {
+          /*
+            You don't say what to do if one item is blank
+            By the "Blank set is true" logic,  "" is not a word, so skip
+            (if the logic was intended to return false for this case, return false instead)
+          */
+
+          continue;
+        }
+        
+        char letter = Character.toLowerCase(word.charAt(0));
+        
+        if (letter != 'a') {
+          return false;
+        }
+    }
+
+    return true;
   }
 
   /**
@@ -24,6 +43,13 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    
+    for (String word : words) {
+      if (word.equals("")) {
+        return true;
+      }
+    }
+
     return false;
   }
 
@@ -36,7 +62,24 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+
+    
+    int longest = 0;
+    
+    for (String word : words) {
+      // You didn't give instructions for spaces, so spaces will be removed
+      // https://www.w3schools.com/java/ref_string_replaceall.asp
+      // https://www.w3schools.com/java/java_regex.asp
+      if (word.contains(" ")) {
+        word = word.replaceAll("\\s", "");
+      }
+
+      if (word.length() > longest) {
+        longest = word.length();
+      }
+    }
+    
+    return longest;
   }
 
  /**
@@ -48,6 +91,22 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+    int shortest = Integer.MAX_VALUE;
+    
+    for (String word : words) {
+      
+      // You didn't give instructions for spaces, so spaces in a word will be removed
+      // https://www.w3schools.com/java/ref_string_replaceall.asp
+      // https://www.w3schools.com/java/java_regex.asp
+      if (word.contains(" ")) {
+        word = word.replaceAll("\\s", "");
+      }
+
+      if (word.length() < shortest) {
+        shortest = word.length();
+      }
+    }
+
+    return shortest;
   }
 }
