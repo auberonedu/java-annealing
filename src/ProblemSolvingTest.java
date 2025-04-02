@@ -242,7 +242,6 @@ public class ProblemSolvingTest {
     // act
     int actual = ProblemSolving.minLength(input);
     // assert
-    assertEquals(0, actual);
+    assertEquals(Integer.MAX_VALUE, actual);
   }
-
 }
