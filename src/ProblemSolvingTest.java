@@ -80,8 +80,18 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
- 
   @Test
+  void testAllStartWithA_falseWordsStartWithNumbersOrSymbols()
+  {
+    // arrange
+    Set<String> input = Set.of("4rmadillo", "@rcanine", "8bestos","&BBA");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    //assert
+    assertFalse(actual);
+  }
+
+   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
