@@ -21,7 +21,7 @@ public class ProblemSolving {
     AtomicBoolean condition = new AtomicBoolean(true);
 
     words.forEach(word -> {
-      if(!word.startsWith("A")){
+      if(!word.toUpperCase().startsWith("A")){
         condition.set(false);
       }
     });
