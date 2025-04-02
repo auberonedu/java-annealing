@@ -240,4 +240,73 @@ public class ProblemSolvingTest {
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("blue", "yellow", "orange", "green", "red");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
+
+  @Test
+  void testMinLength_singleWord() {
+    // arrange
+    Set<String> input = Set.of("blue");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(4, actual);
+  }
+
+  @Test
+  void testMinLength_nullSet() {
+    // arrange
+    Set<String> input = null;
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_singleLetter() {
+    // arrange
+    Set<String> input = Set.of("A");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMinLength_multipleLetters() {
+    // arrange
+    Set<String> input = Set.of("a", "b", "c", "d");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMinLength_multipleWordsSameLength() {
+    // arrange
+    Set<String> input = Set.of("blue", "pink", "kiwi", "gray");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(4, actual);
+  }
 }
