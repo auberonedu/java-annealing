@@ -70,7 +70,7 @@ public class ProblemSolving {
 
     if(words.isEmpty()){return Integer.MAX_VALUE;}
 
-    String tempWord = "";
+    String tempWord = "pneumonoultramicroscopicsilicovolcanoconiosisIsTheLongest wordPossible";
     for(String word: words){
       if(word.trim().length() < tempWord.length()){
         tempWord = (word.trim());
