@@ -123,7 +123,7 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-  
+  //MaxLength tests --------------------------
   @Test
   void testMaxLength_multipleWords() {
     // arrange
@@ -134,15 +134,81 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
+  @Test
+  void testMaxLength_SingleWord() {
+    // arrange
+    Set<String> input = Set.of("by");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
   
+  @Test
+  void testMaxLength_soloElementSingleSpace() {
+    // arrange
+    Set<String> input = Set.of(" ");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+//MaxLength tests --------------------------
+@Test
+void testMinLength_multipleWords() {
+  // arrange
+  Set<String> input = Set.of("by", "a", "commodius", "vicus");
+  // act
+  int actual = ProblemSolving.minLength(input);
+  // assert
+  assertEquals(1, actual);
+}
 
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_soloElement() {
+    // arrange
+    Set<String> input = Set.of("aba");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
+
+  @Test
+  void testMinLength_soloElementSingleSpace() {
+    // arrange
+    Set<String> input = Set.of(" ");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
 }
