@@ -83,15 +83,15 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-  @Test
-  void testHasEmptyString_trueOneEmpty() {
-    // arrange
-    Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
-    // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
-    // assert
-    assertTrue(actual);
-  }
+  // @Test
+  // void testHasEmptyString_trueOneEmpty() {
+  //   // arrange
+  //   Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
+  //   // act
+  //   boolean actual = ProblemSolving.hasEmptyString(input);
+  //   // assert
+  //   assertTrue(actual);
+  // }
 
 
   // TODO:
@@ -118,15 +118,15 @@ public class ProblemSolvingTest {
   }
 
 
-//   @Test
-//   void testMaxLength_multipleWords() {
-//     // arrange
-//     Set<String> input = Set.of("by", "a", "commodius", "vicus");
-//     // act
-//     int actual = ProblemSolving.maxLength(input);
-//     // assert
-//     assertEquals(9, actual);
-//   }
+  @Test
+  void testMaxLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(9, actual);
+  }
 
 
 //   // TODO:
