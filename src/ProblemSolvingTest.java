@@ -185,6 +185,17 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(5, actual);  
   }
+
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
