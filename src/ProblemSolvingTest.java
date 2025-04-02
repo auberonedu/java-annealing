@@ -56,6 +56,17 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_singleElement() {
+    // arrange
+    Set<String> input = Set.of("A");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+
 
 
 
