@@ -126,8 +126,7 @@ public class ProblemSolvingTest {
     // assert
     assertTrue(actual);  
   }
-
-
+  
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
