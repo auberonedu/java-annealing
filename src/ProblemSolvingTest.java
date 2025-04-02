@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,51 @@ public class ProblemSolvingTest {
   //  - test a set with only a single element
   //  - more you can think of!
 
+  // testing if there is an empty set
+  @Test
+  void testAllStartWithA_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual); // asserting true, because of the edge case
+  }
+
+  // testing if a set where none start with a
+  @Test
+  void testAllStartWithA_noneStartWithA() {
+      // arrange
+      Set<String> input = Set.of("cat", "dog", "fish", "salamander");
+      // act
+      boolean actual = ProblemSolving.allStartWithA(input);
+      // assert
+      assertFalse(actual);
+  }
+
+  // testing a set with only a single element (starting with A)
+  @Test
+  void testAllStartWithA_oneElementStartingWithA() {
+      // arrange
+      Set<String> input = Set.of("animal");
+      // act
+      boolean actual = ProblemSolving.allStartWithA(input);
+      // assert
+      assertTrue(actual);
+  }
+
+  // testing a set with only a single element not starting with A
+  @Test
+  void testAllStartWithA_oneElementNotStartingWithA() {
+      // arrange
+      Set<String> input = Set.of("salamander");
+      // act
+      boolean actual = ProblemSolving.allStartWithA(input);
+      // assert
+      assertFalse(actual);
+  }
+
+ // ---------------------------------------------------------------------
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -55,12 +101,42 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
+// testing if there is an empty set
+@Test
+void testHasEmptyString_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+}
 
+@Test
+void testHasEmptyString_hasString() {
+      // arrange
+     Set<String> input = Set.of("monkey", "hawaii", "salamander");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+}
+
+@Test
+void testHasEmptyString_hasWhiteSpaceStrings() {
+      // arrange
+      Set<String> input = Set.of(" ", "\n");
+      // act
+      boolean actual = ProblemSolving.hasEmptyString(input);
+      // assert
+      assertFalse(actual);
+}
+
+// ---------------------------------------------------------------------
   @Test
   void testMaxLength_multipleWords() {
     // arrange
