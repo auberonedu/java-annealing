@@ -127,9 +127,6 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
-  // TODO:
-  // Come up with more tests to thoroughly test maxLength
-  // Use your creativity here!
   @Test
   void testMaxLength_equalLengthWords() {
     // arrange
