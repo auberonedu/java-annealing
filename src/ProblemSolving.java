@@ -15,7 +15,7 @@ public class ProblemSolving {
     if(words.isEmpty()){return true;}
 
     for(String word: words){
-      if(!word.toLowerCase().startsWith("a")){
+      if(!word.trim().toLowerCase().startsWith("a")){
         return false;
       }
     }
@@ -51,8 +51,8 @@ public class ProblemSolving {
     if(words.isEmpty()){return 0;}
     String tempWord = "";
     for(String word: words){
-      if(word.length() > tempWord.length()){
-        tempWord = word;
+      if(word.trim().length() > tempWord.length()){
+        tempWord = word.trim();
       }
     }
     return tempWord.length();
@@ -67,6 +67,15 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+
+    if(words.isEmpty()){return Integer.MAX_VALUE;}
+
+    String tempWord = "";
+    for(String word: words){
+      if(word.trim().length() < tempWord.length()){
+        tempWord = (word.trim());
+      }
+    }
+    return tempWord.length();
   }
 }
