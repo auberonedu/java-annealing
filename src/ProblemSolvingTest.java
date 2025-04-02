@@ -70,7 +70,10 @@ public class ProblemSolvingTest {
   @Test
   void testAllStartWithA_containsNullAndEmptyString() {
     // arrange
-    Set<String> input = Set.of("Apple", "", null);
+    // learning point: Set.of since Java 9+ does not allow null
+    // throws NullPointerException before set even created
+    // Google search btw offered solution, test passes now
+    Set<String> input = new HashSet<>(Arrays.asList("Apple", "", null));
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     // assert

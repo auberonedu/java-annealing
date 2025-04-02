@@ -15,7 +15,9 @@ public class ProblemSolving {
     if (words == null || words.isEmpty()) return true;
 
     for (String word : words) {
-      if (word == null || word.isEmpty() || Character.toLowerCase(word.charAt(0)) != 'a') return false;
+      if (word == null) return false;
+      if (word.isEmpty()) return false;
+      if (Character.toLowerCase(word.charAt(0)) != 'a') return false;
     }
     return true;
   }
