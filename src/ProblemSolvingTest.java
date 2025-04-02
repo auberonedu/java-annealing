@@ -171,7 +171,8 @@ public class ProblemSolvingTest {
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
-//MaxLength tests --------------------------
+  
+//MinLength tests --------------------------
 @Test
 void testMinLength_multipleWords() {
   // arrange
