@@ -234,6 +234,16 @@ public class ProblemSolvingTest {
     assertEquals(3, actual);
   }
 
+  @Test
+  void testMaxLength_longWordWithOtherWords() {
+    // arrange
+    Set<String> input = Set.of("abcdefghijklmnopqrstuvwxyz", "bye", "get", "buy");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(26, actual);
+  }
+
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
@@ -308,5 +318,15 @@ public class ProblemSolvingTest {
     int actual = ProblemSolving.minLength(input);
     // assert
     assertEquals(4, actual);
+  }
+
+  @Test
+  void testMinLength_longWordWithOtherWords() {
+    // arrange
+    Set<String> input = Set.of("abcdefghijklmnopqrstuvwxyz", "bye", "get", "buy");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
   }
 }
