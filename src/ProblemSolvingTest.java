@@ -77,6 +77,9 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+
+  // testHasEmptyString
+
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -97,11 +100,48 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testHasEmptyString_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
 
-  // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
+  @Test
+  void testHasEmptyString_whiteSpace() {
+    // arrange
+    Set<String> input = Set.of("  ", "one ", " punch ", " man");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert - since the string itself isn't empty, return emptyString = false
+    assertFalse(actual);
+  }
 
+  @Test
+  void testHasEmptyString_spacedElements() {
+    // arrange
+    Set<String> input = Set.of("  armadillo", " utopia", "yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_specialCharacterElements() {
+    // arrange
+    Set<String> input = Set.of("#armadillo", "$", "!utopia", "%yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+
+  // testMaxLength
 
   @Test
   void testMaxLength_multipleWords() {
