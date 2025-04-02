@@ -11,8 +11,22 @@ public class ProblemSolving {
    * @param words a set of words
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
-  public static boolean allStartWithA(Set<String> words) {
-    return false;
+  public static boolean allStartWithA(Set<String> words) 
+  {
+    if(words.isEmpty())
+    {
+      return true;
+    }
+    
+    for(String word : words)
+    {
+      if(!word.toLowerCase().startsWith("a"))
+      {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   /**
@@ -23,7 +37,21 @@ public class ProblemSolving {
    * @param words a set of words
    * @return true if there is at least one empty string, false otherwise
    */
-  public static boolean hasEmptyString(Set<String> words) {
+  public static boolean hasEmptyString(Set<String> words) 
+  {
+    if(words.isEmpty())
+    {
+      return false;
+    }
+    
+    for(String word : words)
+    {
+      if(word !=null && word.isEmpty())
+      {
+        return true;
+      }
+    }
+
     return false;
   }
 
@@ -35,8 +63,24 @@ public class ProblemSolving {
    * @param words a set of words
    * @return the maximum length of a word in the set
    */
-  public static int maxLength(Set<String> words) {
-    return 0;
+  public static int maxLength(Set<String> words) 
+  {
+    if(words.isEmpty())
+    {
+      return 0;
+    }
+
+    String longest = "";
+  
+    for(String word : words)
+    {
+      if(word != null && word.trim().length() > longest.length())
+      {
+        longest = word;
+      }
+    }
+
+    return longest.length();
   }
 
  /**
@@ -47,7 +91,31 @@ public class ProblemSolving {
    * @param words a set of words
    * @return the minimum length of a word in the set
    */
-  public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
-  }
+  public static int minLength(Set<String> words) 
+  {
+      if(words.isEmpty())
+      {
+        return Integer.MAX_VALUE;
+      }
+  
+      int shortest = Integer.MAX_VALUE;
+    
+      for(String word : words)
+      {
+        if(word !=null)
+        {
+          word = word.trim();
+          
+          if(!word.isEmpty() && word.length() < shortest)
+          {
+            shortest = word.length();
+          }
+
+        }
+    
+      }
+
+      return shortest;
+    }
+  
 }
