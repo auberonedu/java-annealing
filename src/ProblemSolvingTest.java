@@ -44,7 +44,7 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
   @Test
-  void testNoneStartWithA_singleLetters() {
+  void testAllStartWithA_singleLetters() {
     // arrange
     Set<String> input = Set.of("A", "a", "b");
     // act
@@ -96,8 +96,6 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-
-
   @Test
   void testMaxLength_multipleWords() {
     // arrange
@@ -107,7 +105,6 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(9, actual);
   }
-
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
@@ -131,6 +128,24 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(10, actual);
   }
+  @Test
+  void testMaxLength_basicTest() {
+    // arrange
+    Set<String> input = Set.of("Uno", "Mbilli", "Three", "numberInAnotherLanguageICan'tThinkOf");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(36, actual);
+  }
+  @Test
+  void testMaxLength_sameSizes() {
+    // arrange
+    Set<String> input = Set.of("test", "test", "test", "test");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(4, actual);
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
@@ -141,19 +156,17 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("Uno", "Mbilli", "Three", "numberInAnotherLanguageICan'tThinkOf");
     // act
-    int actual = ProblemSolving.maxLength(input);
+    int actual = ProblemSolving.minLength(input);
     // assert
-    assertEquals(0, actual);
+    assertEquals(3, actual);
   }
   @Test
-  void testMinLength_specialCharacters() {
+  void testMinLength_noStrings() {
     // arrange
     Set<String> input = Set.of("", "", "", "");
     // act
-    int actual = ProblemSolving.maxLength(input);
+    int actual = ProblemSolving.minLength(input);
     // assert
     assertEquals(0, actual);
   }
-
-
 }
