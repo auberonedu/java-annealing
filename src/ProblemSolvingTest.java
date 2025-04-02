@@ -119,7 +119,7 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testHasEmptyString_emptySet() {
+  void testHasEmptyString_nullSet() {
     // arrange
     Set<String> input = null;
     // act
