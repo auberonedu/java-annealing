@@ -207,7 +207,7 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("chiikawa");
     // act
-    int actual = ProblemSolving.maxLength(input);
+    int actual = ProblemSolving.minLength(input);
     // assert
     assertEquals(8, actual);
   }
@@ -217,8 +217,8 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("chiikawa", "loves", "to", "dance");
     // act
-    int actual = ProblemSolving.maxLength(input);
+    int actual = ProblemSolving.minLength(input);
     // assert
-    assertEquals(8, actual);
+    assertEquals(2, actual);
   }
 }
