@@ -8,6 +8,8 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 public class ProblemSolvingTest {
+  // allStartWithA()
+
   @Test
   void testAllStartWithA_trueMixedCase() {
     // arrange
@@ -85,6 +87,9 @@ public class ProblemSolvingTest {
     // assert
     assertTrue(actual);
   }
+  
+
+  // hasEmptyString()
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -111,6 +116,58 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
+  @Test
+  void testHasEmptyString_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_nullSet() {
+    // arrange
+    Set<String> input = null;
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_singleEmptyElement() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_firstElementEmpty() {
+    // arrange
+    Set<String> input = Set.of("", "apple", "utopia", "yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_lastElementEmpty() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "red", "utopia", "");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+
+  // maxLength()
 
   @Test
   void testMaxLength_multipleWords() {
