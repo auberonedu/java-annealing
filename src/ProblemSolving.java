@@ -93,6 +93,21 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+
+    // this also works came is if words.size() == 0
+    if (words.isEmpty()) {
+      return Integer.MAX_VALUE;
+    }
+    int min = Integer.MAX_VALUE;
+
+    List<String> list = new ArrayList<>(words);
+
+    for (int i = 0; i < words.size(); i++) {
+      if (list.get(i).length() < min) {
+        min = list.get(i).length();
+      }
+    }
+
+    return min;
   }
 }
