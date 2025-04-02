@@ -134,7 +134,7 @@ public class ProblemSolvingTest {
   }
 
 
-  // TODO:
+  // +TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
   @Test
@@ -151,11 +151,19 @@ public class ProblemSolvingTest {
   void testMaxLength_wordWithSpaces() {
     // arrange
     Set<String> input = Set.of("ab   cde", "abcde");
-    int actual = ProblemSolving.minLength(input);
+    int actual = ProblemSolving.maxLength(input);
     assertEquals(5, actual);
   }
+
+  @Test
+  void testMaxLength_symbols() {
+    // arrange
+    Set<String> input = Set.of("", "@@ ", "$", "!");
+    int actual = ProblemSolving.maxLength(input);
+    assertEquals(2, actual);
+  }
   
-  // TODO:
+  // +TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
@@ -171,6 +179,14 @@ public class ProblemSolvingTest {
   void testMinLength_multipleSpaces() {
     // arrange
     Set<String> input = Set.of("     ", "  ", "   ", " ");
+    int actual = ProblemSolving.minLength(input);
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_symbols() {
+    // arrange
+    Set<String> input = Set.of("", "@@ ", "$", "!");
     int actual = ProblemSolving.minLength(input);
     assertEquals(0, actual);
   }
