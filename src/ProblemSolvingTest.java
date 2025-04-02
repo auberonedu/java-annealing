@@ -46,6 +46,36 @@ public class ProblemSolvingTest {
   }
 
   @Test
+  void testAllStartWithA_notAllStartWithA() {
+    // arrange
+    Set<String> input = Set.of("lion", "deer", "elephant");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_singleElement() {
+    // arrange
+    Set<String> input = Set.of("apple");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartsWithA_oneLetter() {
+    // arrange
+    Set<String> input = Set.of("D");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
