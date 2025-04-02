@@ -36,7 +36,7 @@ public class ProblemSolvingTest {
   //  - test a set with only a single element
   //  - more you can think of!
   @Test
-  void testAllStarWithA() {
+  void testAllStarWithA_emptySet() {
     //arrange
     Set<String> input = Set.of();   
 
@@ -46,6 +46,32 @@ public class ProblemSolvingTest {
     //assert
     assertFalse(actual);
   }
+
+  @Test
+  void testAllStarWithA_noneStartWithA() {
+    //arrange
+    Set<String> input = Set.of("one", "utopia", "help");   
+
+    //act
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    //assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStarWithA_oneElement() {
+    //arrange
+    Set<String> input = Set.of("aoli");   
+
+    //act
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    //assert
+    assertTrue(actual);
+  }
+
+
 
 //   @Test
 //   void testHasEmptyString_falseAllNonEmpty() {
