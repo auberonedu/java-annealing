@@ -161,10 +161,126 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
+  // empty set (returns 0)
+  // null set (returns 0)
+  // singleWord (returns length of the word)
+  // includesEmptyString (should return length of longest non-empty string)
+  // null and valid strings (should return longest actual string)
+
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_nullSet() {
+    // arrange
+    Set<String> input = null;
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_singleWord() {
+    // arrange
+    Set<String> input = Set.of("bedtime");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(7, actual);
+  }
+
+  @Test
+  void testMaxLength_includesEmptyString() {
+    // arrange
+    Set<String> input = Set.of("", "four", "seven");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMaxLength_containsNull() {
+    // arrange
+    Set<String> input = new HashSet<>(Arrays.asList(null, "alpha", "beta"));
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
 
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+  // same unit tests types as maxLength but
+  // emptyString will return 0 (length of shortest string)
 
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("walk", "dog", "lets", "go");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_nullSet() {
+    // arrange
+    Set<String> input = null;
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_singleWord() {
+    // arrange
+    Set<String> input = Set.of("exhausted");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(9, actual);
+  }
+
+  @Test
+  void testMinLength_includesEmptyString() {
+    // arrange
+    Set<String> input = Set.of("", "four", "seven");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_containsNull() {
+    // arrange
+    Set<String> input = new HashSet<>(Arrays.asList(null, "hi", "world"));
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
 }

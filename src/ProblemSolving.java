@@ -12,12 +12,16 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    if (words == null || words.isEmpty()) return true;
+    if (words == null || words.isEmpty())
+      return true;
 
     for (String word : words) {
-      if (word == null) return false;
-      if (word.isEmpty()) return false;
-      if (Character.toLowerCase(word.charAt(0)) != 'a') return false;
+      if (word == null)
+        return false;
+      if (word.isEmpty())
+        return false;
+      if (Character.toLowerCase(word.charAt(0)) != 'a')
+        return false;
     }
     return true;
   }
@@ -31,11 +35,13 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
-    //edge case
-    if (words == null || words.isEmpty()) return false;
+    // edge case
+    if (words == null || words.isEmpty())
+      return false;
 
     for (String word : words) {
-      if ("".equals(word)) return true;
+      if ("".equals(word))
+        return true;
     }
     return false;
   }
@@ -49,10 +55,19 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+    if (words == null || words.isEmpty())
+      return 0;
+
+    int max = 0;
+    for (String word : words) {
+      if (word != null) {
+        max = Math.max(max, word.length());
+      }
+    }
+    return max;
   }
 
- /**
+  /**
    * Returns the length of the shortest word in the set.
    * 
    * Edge case: if set is empty, return Integer.MAX_VALUE
@@ -61,6 +76,15 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+    if (words == null || words.isEmpty())
+      return Integer.MAX_VALUE;
+
+    int min = Integer.MAX_VALUE;
+    for (String word : words) {
+      if (word != null) {
+        min = Math.min(min, word.length());
+      }
+    }
+    return min;
   }
 }
