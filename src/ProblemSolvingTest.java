@@ -231,4 +231,14 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(0, actual);  
   }
+
+  @Test
+  void testMinLength_sameLengths() {
+    // arrange
+    Set<String> input = Set.of("asdfg", "qwert", "tyuio", "zxcvb");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(5, actual);  
+  }
 }
