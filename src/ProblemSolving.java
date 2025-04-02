@@ -60,7 +60,20 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+
+    if (words == null || words.isEmpty()) {
+      return 0;
+    }
+
+    int longestWord = 0;
+
+    for (var word : words) {
+      if (word.length() > longestWord) {
+        longestWord = word.length();
+      }
+    }
+
+    return longestWord;
   }
 
  /**
