@@ -114,8 +114,18 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-  assertFalse(actual);  // The strings are not empty, even though they have spaces
-}
+    assertFalse(actual); 
+  }
+
+  @Test
+  void testHasEmptyString_EmptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);  
+  }
 
 
   // TODO:
