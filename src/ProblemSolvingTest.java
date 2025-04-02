@@ -8,6 +8,9 @@ import java.util.HashSet;
 import org.junit.jupiter.api.Test;
 
 public class ProblemSolvingTest {
+
+  // allStartWithA Tests
+
   @Test
   void testAllStartWithA_trueMixedCase() {
     // arrange
@@ -27,14 +30,6 @@ public class ProblemSolvingTest {
     // assert
     assertFalse(actual);
   }
-
-  // TODO:
-  // Come up with more tests to thoroughly test testAllStartWithA
-  // Suggestions:
-  //  - test an empty set
-  //  - test a set where none start with A
-  //  - test a set with only a single element
-  //  - more you can think of!
 
   @Test
   void testAllStartWithA_emptySet() {
@@ -86,6 +81,8 @@ public class ProblemSolvingTest {
     assertTrue(result);
   }
 
+  // hasEmptyString Tests
+
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -106,11 +103,38 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  // empty set
+  @Test
+  void testHasEmptyString_falseEmptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    boolean result = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(result);
+  }
 
-  // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
+  @Test
+  void testHasEmptyString_trueOnlyEmpty() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    boolean result = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(result);
+  }
 
+  @Test
+  void testHasEmptyString_falseOnlySpaces() {
+    // arrange
+    Set<String> input = Set.of(" ", "  ", "   ");
+    // act
+    boolean result = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(result);
+  }
+
+  // maxLength Tests
 
   @Test
   void testMaxLength_multipleWords() {
@@ -122,12 +146,19 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
+  // empty set, return 0
+  // all words 1 letter long, return 1
+  // a ridiculously long word, accurate count
+  
+
+
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
     
-  
+  // minLength Tests
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
