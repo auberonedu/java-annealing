@@ -1,4 +1,6 @@
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProblemSolving {
 
@@ -12,7 +14,19 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
+    if(words.isEmpty()){
+      return true;
+    }
+
+    AtomicBoolean condition = new AtomicBoolean(true);
+
+    words.forEach(word -> {
+      if(!word.startsWith("A")){
+        condition.set(false);
+      }
+    });
+
+    return condition.get();
   }
 
   /**
@@ -24,7 +38,19 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
-    return false;
+    if(words.isEmpty()){
+      return false;
+    }
+
+    AtomicBoolean condition = new AtomicBoolean(true);
+
+    words.forEach(word -> {
+      if(!word.isEmpty()){
+        condition.set(false);
+      }
+    });
+
+    return condition.get();
   }
 
   /**
@@ -36,6 +62,14 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
+    if(words.isEmpty()){
+      return 0;
+    }
+
+    AtomicInteger maxLength = new AtomicInteger(0);
+
+    
+
     return 0;
   }
 
