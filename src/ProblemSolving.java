@@ -13,7 +13,7 @@ public class ProblemSolving {
    */
   public static boolean allStartWithA(Set<String> words) {
 
-    if (words == null) {
+    if (words == null || words.isEmpty()) {
       return true;
     }
 
@@ -38,7 +38,7 @@ public class ProblemSolving {
    */
   public static boolean hasEmptyString(Set<String> words) {
 
-    if (words == null) {
+    if (words == null || words.isEmpty()) {
       return false;
     }
 

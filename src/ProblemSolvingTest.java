@@ -38,17 +38,17 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testAllStartWithA_emptySet() {
+  void testAllStartWithA_trueEmptySet() {
     // arrange
     Set<String> input = Set.of();
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     // assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test
-  void testAllStartWithA_singleElement() {
+  void testAllStartWithA_falseSingleElement() {
     // arrange
     Set<String> input = Set.of("utopia");
     // act
@@ -58,9 +58,19 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testAllStartWithA_startsWithPunctuation() {
+  void testAllStartWithA_trueSingleElement() {
     // arrange
-    Set<String> input = Set.of(".armadillo", "utopia", "Arcanine");
+    Set<String> input = Set.of("atmosphere");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_falseStartsWithPunctuation() {
+    // arrange
+    Set<String> input = Set.of(".armadillo", "utopia", "hurdle");
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     // assert
