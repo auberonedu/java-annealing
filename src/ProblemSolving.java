@@ -13,7 +13,7 @@ public class ProblemSolving {
    */
   public static boolean allStartWithA(Set<String> words) {
     if(words.isEmpty()){return true;}
-    
+
     for(String word: words){
       if(!word.toLowerCase().startsWith("a")){
         return false;
@@ -31,6 +31,11 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    if(words.isEmpty()){return false;}
+
+    for(String word: words){
+      if(word.trim().isEmpty()){return true;}
+    }
     return false;
   }
 

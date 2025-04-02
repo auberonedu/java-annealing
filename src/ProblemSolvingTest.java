@@ -46,6 +46,38 @@ public class ProblemSolvingTest {
   }
 
   @Test
+  void testAllStartWithA_TrueNoValues() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_TrueSoloElement() {
+    // arrange
+    Set<String> input = Set.of("armadillo");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_TrueSingleLetter() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "a", "axe");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  //HasEmptyString tests -----------------------
+
+  @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
@@ -65,31 +97,33 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+ 
+  // TODO:
+  // Come up with more tests to thoroughly test hasEmptyString
+  // Use your creativity here!
+
+  //assuming edge case of " " is empty
   @Test
-  void testAllStartWithA_TrueNoValues() {
+  void testHasEmptyString_TrueSingleSpaceString() {
     // arrange
-    Set<String> input = Set.of();
+    Set<String> input = Set.of("armadillo", " ", "utopia", "yeah");
     // act
-    boolean actual = ProblemSolving.allStartWithA(input);
+    boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertTrue(actual);
   }
 
   @Test
-  void testAllStartWithA_TrueSoloElement() {
+  void testHasEmptyString_FalseEmptySet() {
     // arrange
-    Set<String> input = Set.of("armadillo");
+    Set<String> input = Set.of();
     // act
-    boolean actual = ProblemSolving.allStartWithA(input);
+    boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertFalse(actual);
   }
 
-  // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
-
-
+  
   @Test
   void testMaxLength_multipleWords() {
     // arrange
