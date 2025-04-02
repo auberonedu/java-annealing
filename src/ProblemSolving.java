@@ -62,9 +62,18 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
+
+    
     int longest = 0;
     
     for (String word : words) {
+      // You didn't give instructions for spaces, so spaces will be removed
+      // https://www.w3schools.com/java/ref_string_replaceall.asp
+      // https://www.w3schools.com/java/java_regex.asp
+      if (word.contains(" ")) {
+        word = word.replaceAll("\\s", "");
+      }
+
       if (word.length() > longest) {
         longest = word.length();
       }
@@ -85,6 +94,14 @@ public class ProblemSolving {
     int shortest = Integer.MAX_VALUE;
     
     for (String word : words) {
+      
+      // You didn't give instructions for spaces, so spaces in a word will be removed
+      // https://www.w3schools.com/java/ref_string_replaceall.asp
+      // https://www.w3schools.com/java/java_regex.asp
+      if (word.contains(" ")) {
+        word = word.replaceAll("\\s", "");
+      }
+
       if (word.length() < shortest) {
         shortest = word.length();
       }
