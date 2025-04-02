@@ -130,7 +130,35 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
+  @Test
+  void testMaxLength_equalLengthWords() {
+    // arrange
+    Set<String> input = Set.of("bored", "hello", "peach", "sweet");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(5, actual);  
+  }
     
+  @Test
+  void testMaxLength_veryLongWord() {
+    // arrange
+    Set<String> input = Set.of("abcd", "Pneumonoultramicroscopicsilicovolcanoconiosis", "hi", "superhero");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(45, actual);  
+  }
+
+  @Test
+  void testMaxLength_allEmptyStrings() {
+    // arrange
+    Set<String> input = Set.of("", "", "", "");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual); 
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
