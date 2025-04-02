@@ -75,7 +75,7 @@ public class ProblemSolving {
    */
   public static int minLength(Set<String> words) {
     if (words.isEmpty()) {
-      return Integer.MIN_VALUE;
+      return Integer.MAX_VALUE;
     }
 
     int minWordLength = Integer.MAX_VALUE;
@@ -85,7 +85,7 @@ public class ProblemSolving {
         minWordLength = word.length();
       }
     }
-    
+
     return minWordLength;
   }
 }
