@@ -138,7 +138,7 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testHasEmptyString_FalseNullElementNoEmptyStrings() {
+  void testHasEmptyString_falseNullElementNoEmptyStrings() {
     // arrange
     Set<String> input = new HashSet<>();
     input.add(null);
@@ -149,6 +149,20 @@ public class ProblemSolvingTest {
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_trueNullElementWithEmptyString() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    input.add(null);
+    input.add("armadillo");
+    input.add("Arcanine");
+    input.add("");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
   }
 
 
