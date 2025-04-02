@@ -156,16 +156,16 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testHasEmptyString_trueSpaceInString() {
-    // Note - I wasn't sure if this would be false or true but since the string is
-    // still technically empty, I went with true
+  void testHasEmptyString_falseSpaceInString() {
+    // Note - I wasn't sure if this would be false or true since the string IS technically empty, but
+    // Java can count a space as a character.
 
     // arrange
     Set<String> input = Set.of(" ", "");
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);    
+    assertFalse(actual);
   }
 
   // TODO:

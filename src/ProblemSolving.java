@@ -43,6 +43,11 @@ public class ProblemSolving {
     }
 
     for (var word : words) {
+      
+      if (word.contains(" ")) {
+        return false;
+      }
+      
       if (word.equals("")) {
         return true;
       }
@@ -68,8 +73,15 @@ public class ProblemSolving {
     int longestWord = 0;
 
     for (var word : words) {
-      if (word.length() > longestWord) {
-        longestWord = word.length();
+
+      int holdingWordLength = word.length();
+
+      if (word.contains(" ")) {
+        holdingWordLength = word.length() - 1;
+      }
+
+      if (holdingWordLength > longestWord) {
+        longestWord = holdingWordLength;
       }
     }
 
