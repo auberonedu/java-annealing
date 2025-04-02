@@ -27,6 +27,46 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testEmptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    //assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testNoneStartWithA() {
+    // arrange
+    Set<String> input = Set.of("felix", "lebron", "goat");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testOneElement() {
+    // arrange
+    Set<String> input = Set.of("armadillo");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testfalseOneElement() {
+    // arrange
+    Set<String> input = Set.of("Utopia");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
