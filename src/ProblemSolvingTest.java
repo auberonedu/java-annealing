@@ -92,6 +92,8 @@ public class ProblemSolvingTest {
   }
 
 
+  //// hasEmptyString method tests ////
+
 
    @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -166,10 +168,7 @@ public class ProblemSolvingTest {
   }
 
 
-
-
-
-
+  //// maxLength method tests ////
 
 
   @Test
@@ -182,15 +181,103 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
+
+
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_emptySpaces() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    input.add("          ");
+    input.add("           ");
+    input.add("            ");
+    input.add("by");
+    input.add("a");
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMaxLength_nullElement() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    input.add("by");
+    input.add("a");
+    input.add(null);
+    input.add("commodius");
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(9, actual);
+  }
+
+
+  //// minLength method tests ////
     
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+
+
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_emptySpaces() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    input.add(" ");
+    input.add("  ");
+    input.add("   ");
+    input.add("commodius");
+    input.add("vicus");
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMinLength_nullElement() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    input.add("by");
+    input.add(null);
+    input.add("commodius");
+    input.add("vicus");
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
 
 }
