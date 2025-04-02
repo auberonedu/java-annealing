@@ -36,6 +36,34 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
   @Test
+  void testAllStartsWithA_trueEmptySet() {
+    Set<String> input = Set.of();
+    boolean actual = ProblemSolving.allStartWithA(input);
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartsWithA_falseNoneA() {
+    Set<String> input = Set.of("balloon", "Barovia", "carnival", "Casseopeia");
+    boolean actual = ProblemSolving.allStartWithA(input);
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartsWithA_trueOneEmpty() {
+    Set<String> input = Set.of("", "Alisaie", "Alphinaud", "aymeric");
+    boolean actual = ProblemSolving.allStartWithA(input);
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartsWithA_oneItem() {
+    Set<String> input = Set.of("a");
+    boolean actual = ProblemSolving.allStartWithA(input);
+    assertTrue(actual);
+  }
+
+  @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");

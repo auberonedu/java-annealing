@@ -15,8 +15,12 @@ public class ProblemSolving {
 
     for (String word : words) {
         if (word.isEmpty()) {
-          // if a blank set is true, then a blank word is also true since it isn't a word?
-          // skip to the next iteration
+          /*
+            You don't say what to do if one item is blank
+            By the "Blank set is true" logic,  "" is not a word, so skip
+            (if the logic was intended to return false for this case, return false instead)
+          */
+
           continue;
         }
         
