@@ -7,6 +7,9 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 public class ProblemSolvingTest {
+
+  // Tests for AllStartWithA
+
   @Test
   void testAllStartWithA_trueMixedCase() {
     // arrange
@@ -77,13 +80,7 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-  // TODO:
-  // Come up with more tests to thoroughly test testAllStartWithA
-  // Suggestions:
-  // - test an empty set
-  // - test a set where none start with A
-  // - test a set with only a single element
-  // - more you can think of!
+  // Tests for HasEmptyString
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -161,16 +158,14 @@ public class ProblemSolvingTest {
     // Java can count a space as a character.
 
     // arrange
-    Set<String> input = Set.of(" ", "");
+    Set<String> input = Set.of(" ");
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertFalse(actual);
   }
 
-  // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
+  // Tests for MaxLength
 
   @Test
   void testMaxLength_multipleWords() {
@@ -231,6 +226,8 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(4, actual);
   }
+
+  // Tests for MinLength
 
   @Test
   void testMinLength_multipleWords() {
