@@ -37,7 +37,8 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
   @Test
-  void testAllStartWithA_emptySet() {
+  void testAllStartWithA_trueEmptySet() 
+  {
     // arrange
     Set<String> input = new HashSet<>();
     // act
@@ -47,7 +48,8 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testAllStartWithA_falseAllElements() {
+  void testAllStartWithA_falseAllElements() 
+  {
     // arrange
     Set<String> input = Set.of("Nirvana", "utopia", "paradise");
     // act
@@ -57,7 +59,8 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testAllStartWithA_singleElement() {
+  void testAllStartWithA_trueSingleElement() 
+  {
     // arrange
     Set<String> input = Set.of("A");
     // act
@@ -66,14 +69,18 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testAllStartWithA_falseWordsStartWithEmptySpaces()
+  {
+    // arrange
+    Set<String> input = Set.of(" armadillo", "  Arcanine", "   asbestos");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    //assert
+    assertFalse(actual);
+  }
 
-
-
-
-
-
-
-
+ 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
