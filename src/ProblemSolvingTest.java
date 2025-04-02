@@ -112,7 +112,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
+    assertFalse(actual);
   }
 
   @Test
@@ -122,7 +122,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
+    assertFalse(actual);
   }
 
   @Test
@@ -132,17 +132,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
-  }
-
-  @Test
-  void testHasEmptyString_trueAllEmpty() {
-    // arrange
-    Set<String> input = Set.of("", "", "", "");
-    // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
-    // assert
-    assertTrue(actual);
+    assertFalse(actual);
   }
 
   @Test
@@ -156,16 +146,26 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testHasEmptyString_falseSpaceInString() {
-    // Note - I wasn't sure if this would be false or true since the string IS technically empty
-    // but there are times when a space is counted as a character in java, so I set it to false
-
+  void testHasEmptyString_falseOneElement() {
     // arrange
-    Set<String> input = Set.of(" ", "", " ", "");
+    Set<String> input = Set.of("bleh");
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_trueSpaceInString() {
+    // Note - I wasn't sure if this would be false or true but since the string is
+    // still technically empty, I went with true
+
+    // arrange
+    Set<String> input = Set.of(" ", "");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);    
   }
 
   // TODO:
