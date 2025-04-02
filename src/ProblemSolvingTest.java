@@ -214,7 +214,75 @@ public class ProblemSolvingTest {
   }
     
   
-  
   // test minLength
 
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("armor", "greatsword", "helmet", "crossbow");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMinLength_singleWord() {
+    // arrange
+    Set<String> input = Set.of("armor");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_sameLength() {
+    // arrange
+    Set<String> input = Set.of("Llama", "Lemon", "Cloud");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMinLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_whiteSpaceStrings() {
+    // arrange
+    Set<String> input = Set.of("", " ", "  ");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_specialCharacters() {
+    // arrange
+    Set<String> input = Set.of("$", "%#&", "*@!123");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
 }
