@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -31,9 +32,43 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
   //  - test an empty set
+  @Test 
+  void testAllStartWithAEmptySet() {
+    Set<String> input = new HashSet<>();
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    //if set is empty return true
+    assertTrue(actual);
+  }
   //  - test a set where none start with A
+
+  @Test
+  void testNoneStartWithA() {
+    Set<String> input = Set.of("Lion", "Salamander", "Zebra");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertFalse(result);
+  }
+
   //  - test a set with only a single element
+  @Test
+  void OneStartsWithA() {
+    Set<String> input = Set.of("Armadillo");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertTrue(result);
+  }
   //  - more you can think of!
+
+  void SingleCharStartsWithA() {
+    Set<String> input = Set.of("a");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertTrue(result);
+  }
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
