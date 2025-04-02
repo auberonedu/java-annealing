@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class ProblemSolving {
@@ -12,6 +14,19 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
+
+    if (words.size() == 0) {
+      return true;
+    }
+
+    // convert set into a list to get specific index
+    List<String> wordList = new ArrayList<>(words);
+
+    for (int i = 0; i < wordList.size(); i++) {
+      if (wordList.get(i).startsWith("A") || wordList.get(i).startsWith("a")) {
+        return true;
+      }
+    }
     return false;
   }
 
