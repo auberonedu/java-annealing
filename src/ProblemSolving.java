@@ -12,6 +12,19 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
+
+    if (words == null) {
+      return true;
+    }
+
+    for (var word : words) {
+      if (word.startsWith(String.valueOf('a')) || word.startsWith(String.valueOf('A'))) {
+        return true;
+      }
+      else {
+        break;
+      }
+    }
     return false;
   }
 
@@ -24,6 +37,17 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+
+    if (words == null) {
+      return false;
+    }
+
+    for (var word : words) {
+      if (word.equals("")) {
+        return true;
+      }
+    }
+
     return false;
   }
 
