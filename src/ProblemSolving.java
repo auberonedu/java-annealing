@@ -74,7 +74,7 @@ public class ProblemSolving {
   
     for(String word : words)
     {
-      if(word.length() > longest.length())
+      if(word != null && word.trim().length() > longest.length())
       {
         longest = word;
       }
@@ -102,10 +102,17 @@ public class ProblemSolving {
     
       for(String word : words)
       {
-        if(word.length() < shortest)
+        if(word !=null)
         {
-          shortest = word.length();
+          word = word.trim();
+          
+          if(!word.isEmpty() && word.length() < shortest)
+          {
+            shortest = word.length();
+          }
+
         }
+    
       }
 
       return shortest;
