@@ -91,6 +91,8 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+
+
    @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -111,10 +113,23 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
+  
+  @Test
+  void testHasEmptyString_falseEmptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+
+
+
 
 
   @Test
