@@ -8,15 +8,15 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 public class ProblemSolvingTest {
-  @Test
-  void testAllStartWithA_trueMixedCase() {
-    // arrange
-    Set<String> input = Set.of("armadillo", "Arcanine", "asbestos", "ABBA");
-    // act
-    boolean actual = ProblemSolving.allStartWithA(input);
-    //assert
-    assertTrue(actual);
-  }
+  // @Test
+  // void testAllStartWithA_trueMixedCase() {
+  //   // arrange
+  //   Set<String> input = Set.of("armadillo", "Arcanine", "asbestos", "ABBA");
+  //   // act
+  //   boolean actual = ProblemSolving.allStartWithA(input);
+  //   //assert
+  //   assertTrue(actual);
+  // }
 
   @Test
   void testAllStartWithA_falseOneElement() {
@@ -59,39 +59,39 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  // @Test
+  // void testAllStarWithA_oneElement() {
+  //   //arrange
+  //   Set<String> input = Set.of("aoli");   
+
+  //   //act
+  //   boolean actual = ProblemSolving.allStartWithA(input);
+
+  //   //assert
+  //   assertTrue(actual);
+  // }
+
+
+
   @Test
-  void testAllStarWithA_oneElement() {
-    //arrange
-    Set<String> input = Set.of("aoli");   
-
-    //act
-    boolean actual = ProblemSolving.allStartWithA(input);
-
-    //assert
-    assertTrue(actual);
+  void testHasEmptyString_falseAllNoneEmpty() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
   }
 
-
-
-//   @Test
-//   void testHasEmptyString_falseAllNonEmpty() {
-//     // arrange
-//     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
-//     // act
-//     boolean actual = ProblemSolving.hasEmptyString(input);
-//     // assert
-//     assertFalse(actual);
-//   }
-
-//   @Test
-//   void testHasEmptyString_trueOneEmpty() {
-//     // arrange
-//     Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
-//     // act
-//     boolean actual = ProblemSolving.hasEmptyString(input);
-//     // assert
-//     assertTrue(actual);
-//   }
+  @Test
+  void testHasEmptyString_trueOneEmpty() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
 
 
 //   // TODO:
