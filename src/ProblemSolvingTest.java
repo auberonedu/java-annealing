@@ -107,6 +107,17 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testHasEmptyString_WithSpaces() {
+    // arrange
+    Set<String> input = Set.of(" armadillo ", "Arcanine", " utopia ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+  assertFalse(actual);  // The strings are not empty, even though they have spaces
+}
+
+
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
