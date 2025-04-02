@@ -19,7 +19,7 @@ public class ProblemSolving {
         return false;
       }
     }
-    
+
     return true;
   }
 
@@ -52,7 +52,17 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+    if (words.isEmpty()) return 0;
+
+    int maxWordLength = 0;
+
+    for (String word : words) {
+      if (word != null && word.length() > maxWordLength) {
+        maxWordLength = word.length();
+      }
+    }
+    
+    return maxWordLength;
   }
 
  /**
