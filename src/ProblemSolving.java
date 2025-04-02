@@ -29,6 +29,12 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    //edge case
+    if (words == null || words.isEmpty()) return false;
+
+    for (String word : words) {
+      if ("".equals(word)) return true;
+    }
     return false;
   }
 

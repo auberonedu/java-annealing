@@ -2,6 +2,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -98,6 +100,50 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
+  // emptySet - false
+  // nullSet - false
+  // contains null but no empty string (should return false)
+  // contains null AND empty string (should return true)
+
+  @Test
+  void testHasEmptyString_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_emptySet() {
+    // arrange
+    Set<String> input = null;
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_containsNullOnly() {
+    // arrange
+    Set<String> input = new HashSet<>(Arrays.asList("scaredy", null, "cat"));
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_containsEmptyAndNull() {
+    // arrange
+    Set<String> input = new HashSet<>(Arrays.asList("so", null, "", "tired"));
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
 
   @Test
   void testMaxLength_multipleWords() {
