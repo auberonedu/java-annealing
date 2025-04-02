@@ -155,6 +155,17 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(8, actual);
   }
+
+  @Test
+  void testMaxLength_mixedLengths() {
+  // arrange
+  Set<String> input = Set.of("chiikawa", "hachiware", "usagi", "rakko");
+  // act
+  int actual = ProblemSolving.maxLength(input);
+  // assert
+  assertEquals(9, actual);  
+}
+
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
