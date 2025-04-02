@@ -18,14 +18,12 @@ public class ProblemSolving {
     }
 
     for (var word : words) {
-      if (word.startsWith(String.valueOf('a')) || word.startsWith(String.valueOf('A'))) {
-        return true;
-      }
-      else {
-        break;
+      if (!word.startsWith(String.valueOf('a')) && !word.startsWith(String.valueOf('A'))) {
+        return false;
       }
     }
-    return false;
+
+    return true;
   }
 
   /**
