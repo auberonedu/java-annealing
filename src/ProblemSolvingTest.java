@@ -211,4 +211,14 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(8, actual);
   }
+
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("chiikawa", "loves", "to", "dance");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(8, actual);
+  }
 }
