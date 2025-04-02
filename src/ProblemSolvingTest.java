@@ -70,6 +70,8 @@ public class ProblemSolvingTest {
     assertTrue(result);
   }
 
+//  hasEmptyString test cases
+
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -94,6 +96,33 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
+
+  @Test
+  void testHasEmptyString_FirstEmpty(){
+    Set<String> animals = Set.of("", "Zebra", "Cow");
+
+    boolean result = ProblemSolving.hasEmptyString(animals);
+
+    assertTrue(result);
+  }
+
+  @Test
+  void testEmptyString_EmptySet() {
+    Set<String> emptySet = new HashSet<>();
+
+    boolean result = ProblemSolving.hasEmptyString(emptySet);
+
+    assertFalse(result);
+  }
+
+  @Test
+  void testEmptyString_EmptyString() {
+    Set<String> set = Set.of("");
+
+    boolean result = ProblemSolving.hasEmptyString(set);
+
+    assertTrue(result);
+  }
 
 
   @Test
