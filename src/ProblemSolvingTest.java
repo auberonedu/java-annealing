@@ -146,22 +146,124 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
+  // (multiple words, return length of longest)
   // empty set, return 0
+  // Set contains only an empty string, return 0
+  // Set contains only a three space string, returns 3
   // all words 1 letter long, return 1
   // a ridiculously long word, accurate count
-  
 
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int result = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, result);
+  }
 
+  @Test
+  void testMaxLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int result = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(result, 0);
+  }
 
-  // TODO:
-  // Come up with more tests to thoroughly test maxLength
-  // Use your creativity here!
+  @Test
+  void testMaxLength_countSpaces() {
+    // arrange
+    Set<String> input = Set.of(" ", "  ", "   ");
+    // act
+    int result = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(3, result);
+  }
+
+  @Test
+  void testMaxLength_allOneLetterWords() {
+    // arrange
+    Set<String> input = Set.of("I", "A", "T", "Y");
+    // act
+    int result = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(1, result);
+  }
+
+  @Test
+  void testMaxLength_ridiculouslyLongWord() {
+    // arrange
+    Set<String> input = Set.of("pneumonoultramicroscopicsilicovolcanoconiosis", "Hippopotomonstrosesquippedaliophobia");
+    // act
+    int result = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(45, result);
+  }
     
   // minLength Tests
+  
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
 
-  // TODO:
-  // Come up with ALL tests to thoroughly test minLength
-  // Use your creativity here, and consider looking back at the maxLength
-  // tests for inspiration
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int result = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MIN_VALUE, result);
+  }
+
+  @Test
+  void testMinLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int result = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(result, 0);
+  }
+
+  @Test
+  void testMinLength_countSpaces() {
+    // arrange
+    Set<String> input = Set.of(" ", "  ", "   ");
+    // act
+    int result = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, result);
+  }
+
+  @Test
+  void testMinLength_allOneLetterWords() {
+    // arrange
+    Set<String> input = Set.of("I", "A", "T", "Y");
+    // act
+    int result = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, result);
+  }
+
+  @Test
+  void testMinLength_ridiculouslyLongWord() {
+    // arrange
+    Set<String> input = Set.of("pneumonoultramicroscopicsilicovolcanoconiosis", "Hippopotomonstrosesquippedaliophobia");
+    // act
+    int result = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(36, result);
+  }
+
 
 }

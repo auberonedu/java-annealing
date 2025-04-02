@@ -73,14 +73,14 @@ public class ProblemSolving {
   public static int minLength(Set<String> words) {
     if (words.isEmpty()) return Integer.MIN_VALUE;
 
-    int minVal = 0;
+    int minVal = Integer.MAX_VALUE;
 
     for (var word: words) {
       if (word.length() < minVal) {
         minVal = word.length();
       }
     }
-    
+
      return minVal;
   }
 }
