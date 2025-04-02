@@ -100,11 +100,11 @@ public class ProblemSolvingTest {
   @Test
   void testHasEmptyString_spaces() {
     // arrange
-    Set<String> input = Set.of("armadillo", " ", "utopia", "    ", "");
+    Set<String> input = Set.of("armadillo", " ", "utopia", "    ");
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
+    assertFalse(actual);
   }
 
   @Test
