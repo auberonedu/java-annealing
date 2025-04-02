@@ -126,7 +126,7 @@ public class ProblemSolvingTest {
     // assert
     assertTrue(actual);  
   }
-  
+
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
@@ -146,7 +146,15 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
+  @Test
+  void testMaxLength_singleElement() {
+    // arrange
+    Set<String> input = Set.of("chiikawa");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(8, actual);
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
