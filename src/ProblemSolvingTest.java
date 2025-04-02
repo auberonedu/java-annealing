@@ -125,11 +125,11 @@ public class ProblemSolvingTest {
   @Test
   void testHasEmptyString_falseSpaceInWord() {
     // arrange
-    Set<String> input = Set.of("armadillo", "dragons are cool", "utopia", "yeah");
+    Set<String> input = Set.of("hello there", "");
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test

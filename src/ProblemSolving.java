@@ -41,12 +41,7 @@ public class ProblemSolving {
     }
 
     for (var word : words) {
-      
-      if (word.contains(" ")) {
-        return false;
-      }
-      
-      if (word.equals("")) {
+      if (word.isEmpty()) {
         return true;
       }
     }
