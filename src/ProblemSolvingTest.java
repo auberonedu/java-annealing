@@ -13,7 +13,7 @@ public class ProblemSolvingTest {
     Set<String> input = Set.of("armadillo", "Arcanine", "asbestos", "ABBA");
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
-    //assert
+    // assert
     assertTrue(actual);
   }
 
@@ -30,10 +30,50 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
-  //  - test an empty set
-  //  - test a set where none start with A
-  //  - test a set with only a single element
-  //  - more you can think of!
+  // - test an empty set
+  // - test a set where none start with A
+  // - test a set with only a single element
+  // - more you can think of!
+
+  @Test
+  void testAllStartWithA_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_noneStartWithA() {
+    // arrange
+    Set<String> input = Set.of("big", "crazy", "delta");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_singleTrue() {
+    // arrange
+    Set<String> input = Set.of("Adam");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_containsNullAndEmptyString() {
+    // arrange
+    Set<String> input = Set.of("Apple", "", null);
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -55,11 +95,9 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
-
 
   @Test
   void testMaxLength_multipleWords() {
@@ -71,12 +109,10 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
-  
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
