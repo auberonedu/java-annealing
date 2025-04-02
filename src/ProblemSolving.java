@@ -12,7 +12,13 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
+    for (var word: words) {
+      char firstLetter = word.toLowerCase().charAt(0);
+      if (firstLetter != 'a') {
+        return false;
+      }
+    }
+    return true;
   }
 
   /**
