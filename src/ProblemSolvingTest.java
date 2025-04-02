@@ -3,6 +3,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Set;
+import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -34,6 +35,56 @@ public class ProblemSolvingTest {
   //  - test a set where none start with A
   //  - test a set with only a single element
   //  - more you can think of!
+
+  @Test
+  void testAllStartWithA_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    boolean result = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(result);
+  }
+
+  @Test
+  void testAllStartWithA_noneStartWithA() {
+    // arrange
+    Set<String> input = Set.of("no", "first","letter", "match");
+    // act
+    boolean result = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(result);
+  }
+
+  @Test
+  void testAllStartWithA_singleElementStartWithA() {
+    // arrange
+    Set<String> input = Set.of("a");
+    // act
+    boolean result = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(result);
+  }
+
+  @Test
+  void testAllStartWithA_singleElementNoA() {
+    // arrange
+    Set<String> input = Set.of("b");
+    // act
+    boolean result = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(result);
+  }
+  
+  @Test
+  void testAllStartWithA_OnlyCapitalA() {
+    // arrange
+    Set<String> input = Set.of("ALL", "ALPHABET", "AARON", "AVACODO");
+    // act
+    boolean result = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(result);
+  }
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
