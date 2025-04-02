@@ -175,6 +175,16 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(9, actual);  
   }
+
+  @Test
+  void testMaxLength_sameLengths() {
+    // arrange
+    Set<String> input = Set.of("asdfg", "qwert", "tyuio", "zxcvb");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(5, actual);  
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
