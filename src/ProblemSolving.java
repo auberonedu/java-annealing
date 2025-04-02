@@ -68,9 +68,13 @@ public class ProblemSolving {
 
     AtomicInteger maxLength = new AtomicInteger(0);
 
-    
+    words.forEach(word -> {
+      if(maxLength.get() < word.length()){
+        maxLength.set(word.length());
+      }
+    });
 
-    return 0;
+    return maxLength.get();
   }
 
  /**
@@ -82,6 +86,18 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+    if(words.isEmpty()){
+      return Integer.MAX_VALUE;
+    }
+
+    AtomicInteger minLength = new AtomicInteger(Integer.MAX_VALUE);
+
+    words.forEach(word -> {
+      if(minLength.get() > word.length()){
+        minLength.set(word.length());
+      }
+    });
+
+    return minLength.get();
   }
 }
