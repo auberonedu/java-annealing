@@ -50,23 +50,23 @@ public class ProblemSolvingTest {
   // testing if a set where none start with a
   @Test
   void testAllStartWithA_noneStartWithA() {
-      // arrange
-      Set<String> input = Set.of("cat", "dog", "fish", "salamander");
-      // act
-      boolean actual = ProblemSolving.allStartWithA(input);
-      // assert
-      assertFalse(actual);
+    // arrange
+    Set<String> input = Set.of("cat", "dog", "fish", "salamander");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
   }
 
   // testing a set with only a single element (starting with A)
   @Test
   void testAllStartWithA_oneElementStartingWithA() {
-      // arrange
-      Set<String> input = Set.of("animal");
-      // act
-      boolean actual = ProblemSolving.allStartWithA(input);
-      // assert
-      assertTrue(actual);
+    // arrange
+    Set<String> input = Set.of("animal");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
   }
 
   // testing a set with only a single element not starting with A
@@ -106,35 +106,35 @@ public class ProblemSolvingTest {
   // Use your creativity here!
 
 // testing if there is an empty set
-@Test
-void testHasEmptyString_emptySet() {
+  @Test
+  void testHasEmptyString_emptySet() {
     // arrange
     Set<String> input = new HashSet<>();
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertFalse(actual);
-}
+  }
 
-@Test
-void testHasEmptyString_hasString() {
+  @Test
+  void testHasEmptyString_hasString() {
       // arrange
      Set<String> input = Set.of("monkey", "hawaii", "salamander");
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertFalse(actual);
-}
+  }
 
-@Test
-void testHasEmptyString_hasWhiteSpaceStrings() {
-      // arrange
-      Set<String> input = Set.of(" ", "\n");
-      // act
-      boolean actual = ProblemSolving.hasEmptyString(input);
-      // assert
-      assertFalse(actual);
-}
+  @Test
+  void testHasEmptyString_hasWhiteSpaceStrings() {
+    // arrange
+    Set<String> input = Set.of(" ", "\n");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
 
 // ---------------------------------------------------------------------
   @Test
@@ -147,12 +147,50 @@ void testHasEmptyString_hasWhiteSpaceStrings() {
     assertEquals(9, actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
-  
+
+  @Test
+  void testMaxLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("salamander"); // 10 characters
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(10, actual); // expecting 10 as the max
+  }
+
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_withSimilarLengthStrings() {
+    // arrange
+    Set<String> input = Set.of("da", "do", "to", "hi");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMaxLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
@@ -166,4 +204,45 @@ void testHasEmptyString_hasWhiteSpaceStrings() {
     // assert
     assertEquals(1, actual);
   }
+
+  @Test
+  void testMinLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("salamander");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(10, actual);
+  }
+
+  @Test
+  void testMinLength_withSimilarLengthStrings() {
+    // arrange
+    Set<String> input = Set.of("da", "do", "to", "hi");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMinLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
 }
