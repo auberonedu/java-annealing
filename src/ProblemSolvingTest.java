@@ -94,28 +94,28 @@ public class ProblemSolvingTest {
   }
 
 
-//   // TODO:
-//   // Come up with more tests to thoroughly test hasEmptyString
-//   // Use your creativity here!
-//   @Test
-//   void testHasEmptyStringSpaces() {
-//     // arrange
-//     Set<String> input = Set.of("armadillo", "", "utopia", " ", "", "");
-//     // act
-//     boolean actual = ProblemSolving.hasEmptyString(input);
-//     // assert
-//     assertTrue(actual);
-//   }
+  // TODO:
+  // Come up with more tests to thoroughly test hasEmptyString
+  // Use your creativity here!
+  @Test
+  void testHasEmptyStringSpaces() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "", "utopia", " ", "", "");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
 
-//   @Test
-//   void testHasEmptyStrings_noEmptyStrings() {
-//     // arrange
-//     Set<String> input = Set.of("armadillo", "utopia", " ");
-//     // act
-//     boolean actual = ProblemSolving.hasEmptyString(input);
-//     // assert
-//     assertFalse(actual);
-//   }
+  @Test
+  void testHasEmptyStrings_noEmptyStrings() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "utopia", " ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
 
 
 //   @Test
