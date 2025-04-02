@@ -37,7 +37,21 @@ public class ProblemSolving {
    * @param words a set of words
    * @return true if there is at least one empty string, false otherwise
    */
-  public static boolean hasEmptyString(Set<String> words) {
+  public static boolean hasEmptyString(Set<String> words) 
+  {
+    if(words.isEmpty())
+    {
+      return false;
+    }
+    
+    for(String word : words)
+    {
+      if(word.isEmpty())
+      {
+        return true;
+      }
+    }
+
     return false;
   }
 
