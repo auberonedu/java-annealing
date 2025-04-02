@@ -46,7 +46,7 @@ public class ProblemSolving {
     
     for(String word : words)
     {
-      if(word.isEmpty())
+      if(word !=null && word.isEmpty())
       {
         return true;
       }
