@@ -2,6 +2,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -34,6 +38,45 @@ public class ProblemSolvingTest {
   //  - test a set where none start with A
   //  - test a set with only a single element
   //  - more you can think of!
+  @Test
+  void testAllStartWithA_trueEmpty() {
+    // arrange
+    Set<String> input =Collections.emptySet();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_falseNoneStartWithA() {
+    // arrange
+    Set<String> input = Set.of("car", "utopia", "jug");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_trueSingle() {
+    // arrange
+    Set<String> input = Set.of("armadillo");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_falseSingle() {
+    // arrange
+    Set<String> input = Set.of("buffalo");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -60,9 +103,19 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
   @Test
+  void testHasEmptyString_falseEmptySet() {
+    // arrange
+    Set<String> input = Collections.emptySet(); 
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
   void testHasEmptyString_trueAllEmpty() {
     // arrange
-    Set<String> input = Set.of("", "", "");
+    Set<String> input = new HashSet<>(Arrays.asList("", "", "")); 
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
