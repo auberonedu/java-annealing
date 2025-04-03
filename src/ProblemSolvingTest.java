@@ -59,7 +59,15 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
-
+  @Test
+  void testHasEmptyString_trueAllEmpty() {
+    // arrange
+    Set<String> input = Set.of("", "", "");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
 
   @Test
   void testMaxLength_multipleWords() {
@@ -75,7 +83,15 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
+  @Test
+  void testMaxLength_sameLength() {
+    // arrange
+    Set<String> input = Set.of("b", "a", "c", "v");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
