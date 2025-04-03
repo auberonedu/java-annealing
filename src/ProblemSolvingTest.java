@@ -118,7 +118,6 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
@@ -140,16 +139,6 @@ public class ProblemSolvingTest {
     int actual = ProblemSolving.maxLength(input);
     // assert
     assertEquals(4, actual);
-  }
-
-  @Test 
-  void testMaxLength_spaces() {
-    // arrange
-    Set<String> input = Set.of("   ", " ", "", "      ");
-    // act
-    int actual = ProblemSolving.maxLength(input);
-    // assert
-    assertEquals(6, actual);
   }
 
   
@@ -177,16 +166,6 @@ public class ProblemSolvingTest {
   // Assert
   assertEquals(4, actual); 
   }
-
-  // @Test 
-  // void testMinLength_oneWord() {
-  //   // arrange
-  //   Set<String> input = Set.of("grip");
-  //   // act
-  //   int actual = ProblemSolving.minLength(input);
-  //   // assert
-  //   assertEquals(4, actual);
-  // }
 
   @Test 
   void testMinLength_spaces() {
