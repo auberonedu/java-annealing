@@ -53,7 +53,18 @@ public class ProblemSolvingTest {
     // assert
     assertFalse(actual);
   }
+
   // - test a set with only a single element
+  @Test
+  void testAllStartWithA_oneWord() {
+    // arrange
+    Set<String> input = Set.of("above");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
   // - more you can think of!
 
   @Test
