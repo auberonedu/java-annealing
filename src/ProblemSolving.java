@@ -14,7 +14,7 @@ public class ProblemSolving {
   public static boolean allStartWithA(Set<String> words) {
     if (words.isEmpty()) return true;
 
-    for (var word: words) {
+    for (String word: words) {
       char firstLetter = word.toLowerCase().charAt(0);
       if (firstLetter != 'a') {
         return false;
@@ -34,7 +34,7 @@ public class ProblemSolving {
   public static boolean hasEmptyString(Set<String> words) {
     if (words.isEmpty()) return false;
 
-    for (var word: words) {
+    for (String word: words) {
       if (word.trim().equals("")) return true;
     }
     
