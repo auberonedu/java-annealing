@@ -112,6 +112,16 @@ public class ProblemSolvingTest {
   // Use your creativity here!
 
   @Test
+  void testHasEmptyString_noEmptyString() {
+    // arrange
+    Set<String> input = Set.of("I'm", "thinking", "miku", "beam");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
   void testMaxLength_multipleWords() {
     // arrange
     Set<String> input = Set.of("by", "a", "commodius", "vicus");
