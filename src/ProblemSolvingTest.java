@@ -146,9 +146,69 @@ public class ProblemSolvingTest {
     assertEquals(1, actual);
   }
   
+  @Test
+  void testMaxLength_singleWord() {
+    // arrange
+    Set<String> input = Set.of("by");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMaxLength_empty() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("bye", "as", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMinLength_sameLength() {
+    // arrange
+    Set<String> input = Set.of("b", "a", "c", "v");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMinLength_singleWord() {
+    // arrange
+    Set<String> input = Set.of("by");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMinLength_empty() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
 
 }
