@@ -335,4 +335,14 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(1, actual);
   }
+
+  @Test
+  void testMinLength_withMinStringAtEnd() {
+    // arrange
+    Set<String> input = Set.of("Sally the Salamander", "Bob");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
 }

@@ -13,15 +13,13 @@ public class ProblemSolving {
    */
   public static boolean allStartWithA(Set<String> words) {
     if (words.isEmpty()) return true;
-    char a = 'a';
 
     for (String word : words) {
       if (word.isEmpty()) continue;
-
-      if (word.toLowerCase().charAt(0) == a) return true;
+      if (Character.toLowerCase(word.charAt(0)) != 'a') return false;
     }
 
-    return false;
+    return true;
   }
 
   /**
@@ -73,10 +71,10 @@ public class ProblemSolving {
    */
   public static int minLength(Set<String> words) {
     if (words.isEmpty()) return Integer.MAX_VALUE;
-    int min = 0;
+    int min = Integer.MAX_VALUE;
 
     for (String word : words) {
-      if (Integer.min(min, word.length()) == 0) {
+      if (word.length() < min) {
         min = word.length();
       }
     }
