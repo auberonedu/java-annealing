@@ -12,7 +12,14 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
+    for (String i : words) {
+      if (i.charAt(0) != 'A' && i.charAt(0) != 'a') {
+        return true;
+      }
+    }
     return false;
+  }
+
   }
 
   /**
@@ -39,7 +46,7 @@ public class ProblemSolving {
     return 0;
   }
 
- /**
+  /**
    * Returns the length of the shortest word in the set.
    * 
    * Edge case: if set is empty, return Integer.MAX_VALUE
