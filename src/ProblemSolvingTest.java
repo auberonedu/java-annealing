@@ -38,11 +38,9 @@ public class ProblemSolvingTest {
   @Test
   void testAllStarWithA_emptySet() {
     //arrange
-    Set<String> input = Set.of();   
-
+    Set<String> input = Set.of();  
     //act
     boolean actual = ProblemSolving.allStartWithA(input);
-
     //assert
     assertTrue(actual);
   }
@@ -50,11 +48,9 @@ public class ProblemSolvingTest {
   @Test
   void testAllStarWithA_noneStartWithA() {
     //arrange
-    Set<String> input = Set.of("one", "utopia", "help");   
-
+    Set<String> input = Set.of("one", "utopia", "help"); 
     //act
     boolean actual = ProblemSolving.allStartWithA(input);
-
     //assert
     assertFalse(actual);
   }
