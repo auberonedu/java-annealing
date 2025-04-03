@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -27,13 +28,67 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_firstElementFalse(){
+    Set<String> input = Set.of("Salamander", "Arcanine");
+
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_lastElementFalse(){
+    Set<String> input = Set.of("Cow", "Salamander");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertFalse(result);
+  }
+
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
   //  - test an empty set
+  @Test 
+  void testAllStartWithAEmptySet() {
+    Set<String> input = new HashSet<>();
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    //if set is empty return true
+    assertTrue(actual);
+  }
   //  - test a set where none start with A
+
+  @Test
+  void testNoneStartWithA() {
+    Set<String> input = Set.of("Lion", "Salamander", "Zebra");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertFalse(result);
+  }
+
   //  - test a set with only a single element
+  @Test
+  void OneStartsWithA() {
+    Set<String> input = Set.of("Armadillo");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertTrue(result);
+  }
   //  - more you can think of!
+
+  void SingleCharStartsWithA() {
+    Set<String> input = Set.of("a");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertTrue(result);
+  }
+
+//  hasEmptyString test cases
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -60,6 +115,33 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
+  @Test
+  void testHasEmptyString_FirstEmpty(){
+    Set<String> animals = Set.of("", "Zebra", "Cow");
+
+    boolean result = ProblemSolving.hasEmptyString(animals);
+
+    assertTrue(result);
+  }
+
+  @Test
+  void testEmptyString_EmptySet() {
+    Set<String> emptySet = new HashSet<>();
+
+    boolean result = ProblemSolving.hasEmptyString(emptySet);
+
+    assertFalse(result);
+  }
+
+  @Test
+  void testEmptyString_EmptyString() {
+    Set<String> set = Set.of("");
+
+    boolean result = ProblemSolving.hasEmptyString(set);
+
+    assertTrue(result);
+  }
+
 
   @Test
   void testMaxLength_multipleWords() {
@@ -71,11 +153,60 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
+  @Test
+  void testMaxLength_SameLengthMultipleWord() {
+    Set<String> input = Set.of("Dog", "dog", "Cat");
 
-  // TODO:
-  // Come up with more tests to thoroughly test maxLength
-  // Use your creativity here!
+    int result = ProblemSolving.maxLength(input);
     
+    assertEquals(3, result);
+  }
+
+  @Test
+  void testMaxLength_EmptySet() {
+    Set<String> input = new HashSet<>();
+
+    int result = ProblemSolving.maxLength(input);
+
+    assertEquals(0, result);
+  }
+
+  @Test
+  void testMaxLength_EmptyString() {
+    Set<String> input = Set.of("");
+
+    int result = ProblemSolving.maxLength(input);
+    assertEquals(0, result);
+  }
+
+
+  @Test
+  void testMinLength_multipleWords() {
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+
+    int actual = ProblemSolving.minLength(input);
+
+    assertEquals(1, actual);
+  }
+
+
+  @Test
+  void testMinLength_SameLengthMultipleWord() {
+    Set<String> input = Set.of("Fox", "dog", "Cat");
+
+    int result = ProblemSolving.minLength(input);
+
+    assertEquals(3, result);
+  }
+
+  @Test
+  void testMinLength_EmptySet() {
+    Set<String> input = new HashSet<>();
+
+    int result = ProblemSolving.minLength(input);
+
+    assertEquals(Integer.MAX_VALUE, result);
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
