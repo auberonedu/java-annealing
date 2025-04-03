@@ -16,12 +16,16 @@ public class ProblemSolving
    */
   public static boolean allStartWithA(Set<String> words) 
   {
-
-    for(String word : words )
+    if (words.isEmpty())
     {
-      if (word.charAt(0) != 'a' && word.charAt(0) != 'A')
-      return false;
+    return true;
     }
+
+      for(String word : words )
+        {
+        if (word.charAt(0) != 'a' && word.charAt(0) != 'A')
+        return false;
+        }
      
     return true;
   }
