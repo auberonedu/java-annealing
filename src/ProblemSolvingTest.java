@@ -35,6 +35,14 @@ public class ProblemSolvingTest {
   //  - test a set with only a single element
   //  - more you can think of!
 
+
+  // @Test
+  // void testEmptySet_falseSetEmpty(){
+  //   Set<String> input = Set.of();
+
+  //   boolean actual = ProblemSolving.
+  // }
+
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange

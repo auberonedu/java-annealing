@@ -12,7 +12,13 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
+    for (String str : words) {
+      char firstLetter = str.toCharArray()[0];
+      if(firstLetter != 'a' || firstLetter != 'A'){
+        return false;
+      }
+    }
+    return true;
   }
 
   /**
@@ -24,6 +30,12 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    for (String str : words) {
+      if(str.trim() == ""){
+        return true;
+      }
+    }
+    
     return false;
   }
 
