@@ -27,13 +27,35 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-  // TODO:
-  // Come up with more tests to thoroughly test testAllStartWithA
-  // Suggestions:
-  //  - test an empty set
-  //  - test a set where none start with A
-  //  - test a set with only a single element
-  //  - more you can think of!
+  @Test
+  void testAllStartWithA_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_falseAllElements() {
+    // arrange
+    Set<String> input = Set.of("green", "utopia", "blue");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_trueSingleElement() {
+    // arrange
+    Set<String> input = Set.of("apple");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -55,11 +77,21 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testHasEmptyString_trueOnlyEmpty() {
+    // arrange
+    Set<String> input = Set.of("");
+    // assert
+    assertTrue(ProblemSolving.hasEmptyString(input));
+  }
 
-  // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
-
+  @Test
+  void testHasEmptyString_falseEmptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // assert
+    assertFalse(ProblemSolving.hasEmptyString(input));
+  }
 
   @Test
   void testMaxLength_multipleWords() {
@@ -71,15 +103,67 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
+  @Test
+  void testMaxLength_allSameLength() {
+    // arrange
+    Set<String> input = Set.of("cat", "dog", "log");
+    // assert
+    assertEquals(3, ProblemSolving.maxLength(input));
+  }
 
-  // TODO:
-  // Come up with more tests to thoroughly test maxLength
-  // Use your creativity here!
+  @Test
+  void testMaxLength_withEmptyString() {
+    // arrange
+    Set<String> input = Set.of("", "hi", "hello");
+    // assert
+    assertEquals(5, ProblemSolving.maxLength(input));
+  }
+
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // assert
+    assertEquals(0, ProblemSolving.maxLength(input));
+  }
     
-  
-  // TODO:
-  // Come up with ALL tests to thoroughly test minLength
-  // Use your creativity here, and consider looking back at the maxLength
-  // tests for inspiration
+  @Test
+  void testMinLength_basic() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "hi", "a");
+    // assert
+    assertEquals(1, ProblemSolving.minLength(input));
+  }
 
+  @Test
+  void testMinLength_allSameLength() {
+    // arrange
+    Set<String> input = Set.of("bat", "cat", "hat");
+    // assert
+    assertEquals(3, ProblemSolving.minLength(input));
+  }
+
+  @Test
+  void testMinLength_withEmptyString() {
+    // arrange
+    Set<String> input = Set.of("", "hello", "world");
+    // assert
+    assertEquals(0, ProblemSolving.minLength(input));
+  }
+
+  @Test
+  void testMinLength_singleElement() {
+    // arrange
+    Set<String> input = Set.of("longword");
+    // assert
+    assertEquals(8, ProblemSolving.minLength(input));
+  }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // assert
+    assertEquals(Integer.MAX_VALUE, ProblemSolving.minLength(input));
+  }
 }
