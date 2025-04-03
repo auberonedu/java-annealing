@@ -94,14 +94,6 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testHasEmptyString_trueMultipleEmptyStrings() {
-    // arrange
-    Set<String> input = Set.of("", "", "");
-    // assert
-    assertTrue(ProblemSolving.hasEmptyString(input));
-  }
-
-  @Test
   void testMaxLength_multipleWords() {
     // arrange
     Set<String> input = Set.of("by", "a", "commodius", "vicus");
