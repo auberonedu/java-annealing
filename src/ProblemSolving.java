@@ -12,8 +12,13 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
-  }
+  for (String word: words) {
+    if (word.isEmpty() ||Character.toLowerCase(word.charAt(0))!= 'a') {
+        return false; //if the word is empty and isn't 'a' then it returns false
+      } //end if
+  } //end for
+  return true; //if it is not empty and is an 'a' then returns true
+} //end allStartWithA
 
   /**
    * Returns whether there exists at least one empty string in the set of words.
