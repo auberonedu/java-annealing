@@ -219,4 +219,14 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(7, actual);
   }
+
+  @Test
+  void testMinLength_oneEmpty() {
+    // arrange
+    Set<String> input = Set.of("saki", "", "airi", "mizuki");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
 }
