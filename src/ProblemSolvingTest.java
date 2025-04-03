@@ -145,9 +145,9 @@ public class ProblemSolvingTest {
 
 
   // TODO:
-  // Come up with ALL tests to thoroughly test minLength
-  // Use your creativity here, and consider looking back at the maxLength
-  // tests for inspiration
+  // Come up with ALL tests to thoroughly test minLength DONE
+  // Use your creativity here, and consider looking back at the maxLength DONE
+  // tests for inspiration DONE
 
   @Test
   void testMinLength_multipleWords() {
