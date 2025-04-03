@@ -36,12 +36,32 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
 
-  // @Test
-  // void testEmptySet_falseSetEmpty(){
-  //   Set<String> input = Set.of();
+  @Test
+  void testEmptySet_trueSetEmpty(){
+    Set<String> input = Set.of();
 
-  //   boolean actual = ProblemSolving.
-  // }
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    assertTrue(actual);
+  }
+
+  @Test
+  void testSingleElement_trueSingleHasA(){
+    Set<String> input = Set.of("Armadillo");
+
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllElements_falseNoneHaveA(){
+    Set<String> input = Set.of("Puke", "Escape", "Code");
+
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    assertFalse(actual);
+  }
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
