@@ -176,6 +176,20 @@ public class ProblemSolvingTest {
     assertEquals(0, actual);
 
   }
+
+  @Test
+  void testMaxLength_emptyString()
+  {
+    // Arrange
+    Set<String> input = Set.of("");
+    // Act
+    int actual = ProblemSolving.maxLength(input);
+    // Assert
+    assertEquals(0, actual);
+
+  }
+
+  
     
   
   // TODO:
