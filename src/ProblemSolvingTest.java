@@ -179,4 +179,34 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(3, actual);
   }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("lucky");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMinLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
 }
