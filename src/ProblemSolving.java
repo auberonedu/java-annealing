@@ -14,7 +14,7 @@ public class ProblemSolving {
   public static boolean allStartWithA(Set<String> words) {
     for (String str : words) {
       char firstLetter = str.toCharArray()[0];
-      if(firstLetter != 'a' || firstLetter != 'A'){
+      if(firstLetter != 65 && firstLetter != 97){
         return false;
       }
     }
