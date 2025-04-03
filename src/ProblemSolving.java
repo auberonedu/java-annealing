@@ -11,8 +11,8 @@ public class ProblemSolving {
    * @param words a set of words
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
-  public static boolean allStartWithA(Set<String> words) {
-    
+  public static boolean allStartWithA(Set<String> words) 
+  {
     // If the set is empty, return true
     if (words.size() == 0)
     {
@@ -22,19 +22,17 @@ public class ProblemSolving {
     // Check each word to see if it starts with the letter a.
     for (String word : words)
     {
-      if (word.startsWith("a") || word.startsWith("A"))
-      {
-        // Continue checking words
-      }
-      else
+      if (!word.startsWith("a") || !word.startsWith("A"))
       {
         // If even one doesn't match, return false
         return false;
       }
+      
     }
 
     // If all match, return true
     return true;
+
   }
 
   /**
@@ -45,8 +43,28 @@ public class ProblemSolving {
    * @param words a set of words
    * @return true if there is at least one empty string, false otherwise
    */
-  public static boolean hasEmptyString(Set<String> words) {
+  public static boolean hasEmptyString(Set<String> words) 
+  {
+    // If the set is empty return false
+    if (words.size() == 0)
+    {
+      return false;
+    }
+
+    // Check each word to see if it's an empty string
+    for (String word : words)
+    {
+      if (word.trim() == "")
+      {
+        // If an empty string exists, return true
+        return true;
+      }
+
+    }
+
+    // If there are no empty strings, return false
     return false;
+
   }
 
   /**
