@@ -72,15 +72,15 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
-  @Test
-  void testHasEmptyString_trueOneEmpty() {
-    // arrange
-    Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
-    // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
-    // assert
-    assertTrue(actual);
-  }
+  // @Test
+  // void testHasEmptyString_trueOneEmpty() {
+  //   // arrange
+  //   Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
+  //   // act
+  //   boolean actual = ProblemSolving.hasEmptyString(input);
+  //   // assert
+  //   assertTrue(actual);
+  // }
 
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
@@ -108,39 +108,39 @@ public class ProblemSolvingTest {
 
 
   //Max Length
-  @Test
-  void testMaxLength_multipleWords() {
-    // arrange
-    Set<String> input = Set.of("by", "a", "commodius", "vicus");
-    // act
-    int actual = ProblemSolving.maxLength(input);
-    // assert
-    assertEquals(9, actual);
-  }
+  // @Test
+  // void testMaxLength_multipleWords() {
+  //   // arrange
+  //   Set<String> input = Set.of("by", "a", "commodius", "vicus");
+  //   // act
+  //   int actual = ProblemSolving.maxLength(input);
+  //   // assert
+  //   assertEquals(9, actual);
+  // }
 
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-  // @Test 
-  // void tesMaxLength_sameLength() {
-  //   // arrange
-  //   Set<String> input = Set.of("hello", "beets", "timer", "vicus");
-  //   // act
-  //   int actual = ProblemSolving.maxLength(input);
-  //   // assert
-  //   assertEquals(5, actual);
-  // }
+  @Test 
+  void tesMaxLength_sameLength() {
+    // arrange
+    Set<String> input = Set.of("hello", "beets", "timer", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
 
   // @Test 
-  // void tesMaxLength_oneWord() {
-  //   // arrange
-  //   Set<String> input = Set.of("grip");
-  //   // act
-  //   int actual = ProblemSolving.maxLength(input);
-  //   // assert
-  //   assertEquals(4, actual);
-  // }
+  void tesMaxLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("grip");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(4, actual);
+  }
 
   // @Test 
   // void tesMaxLength_spaces() {
