@@ -11,17 +11,19 @@ public class ProblemSolving
    * 
    * @param words a set of words
    * @return true if every word starts with A (case-insensitive), false otherwise.
+   * 
+   * if you need to check everything in the list, set etc. then dont make your first if statement render true 
    */
   public static boolean allStartWithA(Set<String> words) 
   {
 
     for(String word : words )
     {
-      if (word.charAt(0) == 'a' || word.charAt(0) == 'A');
-      return true;
-        
-    })
-    return false;
+      if (word.charAt(0) != 'a' && word.charAt(0) != 'A')
+      return false;
+    }
+     
+    return true;
   }
 
   /**
@@ -31,10 +33,24 @@ public class ProblemSolving
    * 
    * @param words a set of words
    * @return true if there is at least one empty string, false otherwise
+   * if you need to check everything in the list, set etc. then dont make your first if statement render true 
    */
   public static boolean hasEmptyString(Set<String> words) 
   {
+    if (words.isEmpty())
+    {
     return false;
+    }
+
+
+    for (String word : words) //data type string named words inside the words
+    {
+      if(word.isEmpty()) //iterating through the strings to see if theres an empty word, if so return true
+      {
+      return true;
+      }
+    }
+    return false; //other wise return false
   }
 
   /**
@@ -47,7 +63,22 @@ public class ProblemSolving
    */
   public static int maxLength(Set<String> words) 
   {
-    return 0;
+    if(words.isEmpty())
+    {
+      return 0;
+    }
+
+    int maxLength = 0; //tracker 
+
+    for (String word : words) //creating the object to enter the data set 
+    {
+      if(word.length() > maxLength) 
+      {
+        maxLength = word.length(); 
+      }
+    }
+
+    return maxLength;
   }
 
  /**
@@ -60,6 +91,19 @@ public class ProblemSolving
    */
   public static int minLength(Set<String> words) 
   {
-    return Integer.MAX_VALUE;
+    if(words.isEmpty())
+    {
+      return Integer.MAX_VALUE;
+    }
+
+    int minLength = Integer.MAX_VALUE;
+    for(String word : words) 
+    {
+      if(word.length() < minLength)
+      {
+        minLength = word.length();
+      }
+    }
+    return minLength;
   }
 }
