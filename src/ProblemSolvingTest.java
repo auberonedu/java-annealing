@@ -122,7 +122,25 @@ void testHasEmptyString_trueAllEmptyStrings() {
   // Use your creativity here!
   
 //maxLength
- 
+@Test
+void testMaxLength_trueOneWord() {
+    // Arrange
+    Set<String> input = Set.of("supercalifragilisticexpialidocious");
+    // Act
+    int actual = ProblemSolving.maxLength(input);
+    // Assert
+    assertEquals(34, actual); //expected res = 34 characters
+}
+
+@Test
+void testMaxLength_trueLongestWordsTied() {
+    // Arrange
+    Set<String> input = Set.of("magnificent", "tremendous", "fantastic");
+    // Act
+    int actual = ProblemSolving.maxLength(input);
+    // Assert
+    assertEquals(10, actual); // expected res = 10 characters since 2 are the same length
+
 
 //-----------------------------
   
