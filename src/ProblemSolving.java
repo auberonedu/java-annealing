@@ -94,9 +94,9 @@ public class ProblemSolving {
     for (String word : words)
     {
       // If the length of the word is bigger than maxNum, make that the new maxNum
-      if (word.length() > maxNum)
+      if (word.trim().length() > maxNum)
       {
-        maxNum = word.length();
+        maxNum = word.trim().length();
       }
 
     }

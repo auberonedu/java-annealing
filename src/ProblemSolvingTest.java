@@ -189,7 +189,17 @@ public class ProblemSolvingTest {
 
   }
 
-  
+  @Test
+  void testMaxLength_spaces()
+  {
+    // Arrange
+    Set<String> input = Set.of("     ");
+    // Act
+    int actual = ProblemSolving.maxLength(input);
+    // Assert
+    assertEquals(0, actual);
+
+  }
     
   
   // TODO:
