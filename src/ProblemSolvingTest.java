@@ -120,8 +120,8 @@ public class ProblemSolvingTest {
 
 
   // TODO:
-  // Come up with more tests to thoroughly test maxLength
-  // Use your creativity here!
+  // Come up with more tests to thoroughly test maxLength DONE
+  // Use your creativity here! DONE
     
   @Test
   void testMaxLength_allSameLength() {
@@ -148,5 +148,45 @@ public class ProblemSolvingTest {
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("banana","bro","lmfao","huh","do");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("javadoesnotequaljavascript");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(26, actual);
+  }
+
+  @Test
+  void testMinLength_multipleWordsSameMinlength() {
+    // arrange
+    Set<String> input = Set.of("oop","lol","idk","pmo","oof","wyd");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
 
 }
