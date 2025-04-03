@@ -17,7 +17,7 @@ public class ProblemSolving {
     for(String word : words) {
       if(word.startsWith("a")) {
         return true;
-      } else {
+      } else if (!word.startsWith("a")){
         return false;
       }
     }
@@ -33,6 +33,13 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    if(words.isEmpty()) return false;
+
+    for(String word : words) {
+      if(word.isEmpty()) {
+        return true;
+      }
+    }
     return false;
   }
 
