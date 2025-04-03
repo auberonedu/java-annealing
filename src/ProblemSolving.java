@@ -84,7 +84,7 @@ public class ProblemSolving {
     if (words.isEmpty()) 
       return Integer.MAX_VALUE;
 
-    int minLength = 0;
+    int minLength = Integer.MAX_VALUE;
     for (String word : words) 
     {
       // If the word is not null, update the max length if this word is longer

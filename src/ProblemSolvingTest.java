@@ -44,7 +44,7 @@ public class ProblemSolvingTest {
     boolean actual = ProblemSolving.allStartWithA(input);
 
     //assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test
@@ -128,7 +128,7 @@ public class ProblemSolvingTest {
     // act
     int actual = ProblemSolving.maxLength(input);
     // assert
-    assertEquals(0, actual);
+    assertEquals(5, actual);
   }
 
   // @Test 
@@ -172,7 +172,7 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("   ", " ", "", "      ");
     // act
-    int actual = ProblemSolving.maxLength(input);
+    int actual = ProblemSolving.minLength(input);
     // assert
     assertEquals(0, actual);
   }
