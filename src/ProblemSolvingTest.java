@@ -6,9 +6,11 @@ import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 
-public class ProblemSolvingTest {
+public class ProblemSolvingTest 
+{
   @Test
-  void testAllStartWithA_trueMixedCase() {
+  void testAllStartWithA_trueMixedCase() 
+  {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "asbestos", "ABBA");
     // act
@@ -18,7 +20,8 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testAllStartWithA_falseOneElement() {
+  void testAllStartWithA_falseOneElement() 
+  {
     // arrange
     Set<String> input = Set.of("armadillo", "utopia", "Arcanine");
     // act
@@ -36,7 +39,8 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
   @Test
-  void testHasEmptyString_falseAllNonEmpty() {
+  void testHasEmptyString_falseAllNonEmpty() 
+  {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
     // act
@@ -46,7 +50,8 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testHasEmptyString_trueOneEmpty() {
+  void testHasEmptyString_trueOneEmpty() 
+  {
     // arrange
     Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
     // act
@@ -62,7 +67,8 @@ public class ProblemSolvingTest {
 
 
   @Test
-  void testMaxLength_multipleWords() {
+  void testMaxLength_multipleWords() 
+  {
     // arrange
     Set<String> input = Set.of("by", "a", "commodius", "vicus");
     // act

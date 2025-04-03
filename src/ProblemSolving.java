@@ -1,6 +1,7 @@
 import java.util.Set;
 
-public class ProblemSolving {
+public class ProblemSolving 
+{
 
   /**
    * Returns whether every word in the set starts with the letter A (either
@@ -11,7 +12,15 @@ public class ProblemSolving {
    * @param words a set of words
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
-  public static boolean allStartWithA(Set<String> words) {
+  public static boolean allStartWithA(Set<String> words) 
+  {
+
+    for(String word : words )
+    {
+      if (word.charAt(0) == 'a' || word.charAt(0) == 'A');
+      return true;
+        
+    })
     return false;
   }
 
@@ -23,7 +32,8 @@ public class ProblemSolving {
    * @param words a set of words
    * @return true if there is at least one empty string, false otherwise
    */
-  public static boolean hasEmptyString(Set<String> words) {
+  public static boolean hasEmptyString(Set<String> words) 
+  {
     return false;
   }
 
@@ -35,7 +45,8 @@ public class ProblemSolving {
    * @param words a set of words
    * @return the maximum length of a word in the set
    */
-  public static int maxLength(Set<String> words) {
+  public static int maxLength(Set<String> words) 
+  {
     return 0;
   }
 
@@ -47,7 +58,8 @@ public class ProblemSolving {
    * @param words a set of words
    * @return the minimum length of a word in the set
    */
-  public static int minLength(Set<String> words) {
+  public static int minLength(Set<String> words) 
+  {
     return Integer.MAX_VALUE;
   }
 }
