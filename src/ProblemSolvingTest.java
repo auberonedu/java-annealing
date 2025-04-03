@@ -135,6 +135,34 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
+  @Test
+  void testMaxLength_SameLengthMultipleWord() {
+    Set<String> input = Set.of("Dog", "dog", "Cat");
+
+    int result = ProblemSolving.maxLength(input);
+    
+    assertEquals(3, result);
+  }
+
+  @Test
+  void testMaxLength_EmptySet() {
+    Set<String> input = new HashSet<>();
+
+    int result = ProblemSolving.maxLength(input);
+
+    assertEquals(0, result);
+  }
+
+  @Test
+  void testMaxLength_EmptyString() {
+    Set<String> input = Set.of("");
+
+    int result = ProblemSolving.maxLength(input);
+    assertEquals(0, result);
+  }
+
+
+
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
