@@ -1,4 +1,6 @@
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ProblemSolving {
 
@@ -12,7 +14,19 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
+    if(words.isEmpty()){
+      return true;
+    }
+
+    AtomicBoolean condition = new AtomicBoolean(true);
+
+    words.forEach(word -> {
+      if(!word.toUpperCase().startsWith("A")){
+        condition.set(false);
+      }
+    });
+
+    return condition.get();
   }
 
   /**
@@ -24,7 +38,19 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
-    return false;
+    if(words.isEmpty()){
+      return true;
+    }
+
+    AtomicBoolean condition = new AtomicBoolean(false);
+
+    words.forEach(word -> {
+      if(word.isEmpty()){
+        condition.set(true);
+      }
+    });
+
+    return condition.get();
   }
 
   /**
@@ -36,7 +62,19 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+    if(words.isEmpty()){
+      return 0;
+    }
+
+    AtomicInteger maxLength = new AtomicInteger(0);
+
+    words.forEach(word -> {
+      if(maxLength.get() < word.length()){
+        maxLength.set(word.length());
+      }
+    });
+
+    return maxLength.get();
   }
 
  /**
@@ -48,6 +86,18 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+    if(words.isEmpty()){
+      return Integer.MAX_VALUE;
+    }
+
+    AtomicInteger minLength = new AtomicInteger(Integer.MAX_VALUE);
+
+    words.forEach(word -> {
+      if(minLength.get() > word.length()){
+        minLength.set(word.length());
+      }
+    });
+
+    return minLength.get();
   }
 }

@@ -27,6 +27,56 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_noA() {
+    // arrange
+    Set<String> input = Set.of("rmadillo", "utopia", "rcanine");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+  
+  @Test
+  void testAllStartWithA_lastNoA() {
+    // arrange
+    Set<String> input = Set.of("Armadillo", "Autopia", "rcanine");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_OneWordNoA() {
+    // arrange
+    Set<String> input = Set.of("Rmadillo");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_OneWordLowerCase() {
+    // arrange
+    Set<String> input = Set.of("armadillo");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
@@ -55,6 +105,16 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testHasEmptyString_justASpace() {
+    // arrange
+    Set<String> input = Set.of(" ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
 
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
@@ -71,6 +131,16 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
+  @Test
+  void testMaxLength_multipleWordsSameLength() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus", "123456789");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(9, actual);
+  }
+
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
@@ -81,5 +151,25 @@ public class ProblemSolvingTest {
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMinLength_multipleWordsSameLength() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "l", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
 
 }
