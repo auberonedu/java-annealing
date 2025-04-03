@@ -58,6 +58,30 @@ public class ProblemSolvingTest {
   }
 
   //  - test a set with only a single element
+  @Test
+  void testAllStartWithA_onlyOneTrue()
+  {
+    // Arrange
+    Set<String> input = Set.of("act");
+    // Act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // Assert
+    assertTrue(actual);
+
+  }
+
+  @Test
+  void testAllStartWithA_onlyOneFalse()
+  {
+    // Arrange
+    Set<String> input = Set.of("Track");
+    // Act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // Assert
+    assertFalse(actual);
+
+  }
+
   //  - more you can think of!
 
   @Test

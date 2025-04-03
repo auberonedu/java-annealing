@@ -22,7 +22,11 @@ public class ProblemSolving {
     // Check each word to see if it starts with the letter a.
     for (String word : words)
     {
-      if (!word.startsWith("a") || !word.startsWith("A"))
+      if (word.startsWith("a") || word.startsWith("A"))
+      {
+        // Continue checking each word
+      }
+      else
       {
         // If even one doesn't match, return false
         return false;
@@ -136,5 +140,5 @@ public class ProblemSolving {
     return minNum;
 
   }
-  
+
 }
