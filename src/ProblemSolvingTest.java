@@ -136,6 +136,18 @@ public class ProblemSolvingTest {
 
   }
 
+  @Test
+  void testHasEmptyString_emptySet()
+  {
+    // Arrange
+    Set<String> input = Set.of();
+    // Act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // Assert
+    assertFalse(actual);
+
+  }
+
 
   @Test
   void testMaxLength_multipleWords() {
