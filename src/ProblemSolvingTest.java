@@ -165,6 +165,36 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("a");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMaxLength_LengthWords() {
+    // arrange
+    Set<String> input = Set.of("goes", "toes", "moow");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(4, actual);
+  }
+
     
   
   // TODO:
