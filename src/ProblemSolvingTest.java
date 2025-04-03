@@ -165,6 +165,26 @@ public class ProblemSolvingTest {
     assertEquals(0, actual);
   }
 
+  @Test
+  void testMaxLength_emptyElement() {
+    // arrange
+    Set<String> input = Set.of("monday", "tuesday", "", "thursday");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(8, actual);
+  }
+
+  @Test
+  void testMaxLength_oneElement() {
+    // arrange
+    Set<String> input = Set.of("Hatsune");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(7, actual);
+  }
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
