@@ -232,5 +232,17 @@ public class ProblemSolvingTest {
 
   }
 
+  @Test
+  void testMinLength_emptyString()
+  {
+    // Arrange
+    Set<String> input = Set.of("");
+    // Act
+    int actual = ProblemSolving.minLength(input);
+    // Assert
+    assertEquals(0, actual);
+
+  }
+
 
 }
