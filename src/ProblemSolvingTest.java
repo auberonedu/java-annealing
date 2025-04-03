@@ -48,17 +48,17 @@ public class ProblemSolvingTest {
   
   @Test
   void testAllStartWithA_trueSingleElement() {
-      // arrange
+      // Arrange
       Set<String> input = Set.of("Apple");
-      // act
+      // Act
       boolean actual = ProblemSolving.allStartWithA(input);
-      // assert
+      // Assert
       assertTrue(actual); //expected res = true
   }
   
 
 //-----------------------------
-//hasEmptyString
+
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -83,9 +83,30 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
-  
+//hasEmptyString
+  @Test
+void testHasEmptyString_trueMultipleEmptyStrings() {
+    // Arrange
+    Set<String> input = Set.of("", "apple", "", "banana");
+    // Act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // Assert
+    assertTrue(actual); //expected res = True
+}
+
+@Test
+void testHasEmptyString_trueAllEmptyStrings() {
+    // Arrange
+    Set<String> input = Set.of("", "", "");
+    // Act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // Assert
+    assertTrue(actual); //expected res = true
+}
+
+
 //-----------------------------
-//maxLength
+
   @Test
   void testMaxLength_multipleWords() {
     // arrange
@@ -99,14 +120,18 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
-    
+  
+//maxLength
+ 
 
 //-----------------------------
-//minLength
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+
+//minLength
+
 
 }
