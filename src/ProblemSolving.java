@@ -92,14 +92,14 @@ public class ProblemSolving {
       // If the length of the word is bigger than maxNum, make that the new maxNum
       if (word.length() > maxNum)
       {
-        maxNum =word.length();
+        maxNum = word.length();
       }
 
     }
 
     // Return the maxNum
     return maxNum;
-    
+
   }
 
  /**
@@ -110,7 +110,31 @@ public class ProblemSolving {
    * @param words a set of words
    * @return the minimum length of a word in the set
    */
-  public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+  public static int minLength(Set<String> words) 
+  {
+    // If the set is empty, return Integer.MAX_VALUE
+    if (words.size() == 0)
+    {
+      return Integer.MAX_VALUE;
+    }
+
+    // Variable to whatever the min length is
+    int minNum = Integer.MAX_VALUE;
+
+    // Check each word and compare the length against the minNum variable
+    for (String word : words)
+    {
+      // If the length of the word is smaller than minNum, make that the new minNum
+      if (word.length() < minNum)
+      {
+        minNum = word.length();
+      }
+
+    }
+
+    // Return the maxNum
+    return minNum;
+
   }
+  
 }
