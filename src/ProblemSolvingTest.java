@@ -85,8 +85,8 @@ public class ProblemSolvingTest {
   }
 
   // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
+  // Come up with more tests to thoroughly test hasEmptyString DONE
+  // Use your creativity here! DONE
 
   @Test
   void testHasEmptyString_trueOneElementTrueEmpty() {
@@ -123,7 +123,27 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
     
-  
+  @Test
+  void testMaxLength_allSameLength() {
+    // arrange
+    Set<String> input = Set.of("ts", "at", "ab", "do");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
+
+  @Test
+  void testMaxLength_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
