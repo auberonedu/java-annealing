@@ -132,6 +132,16 @@ public class ProblemSolvingTest {
   }
 
   @Test
+  void testHasEmptyString_spaceElement() {
+    // arrange
+    Set<String> input = Set.of("saki", " ", "airi", "mizuki");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
   void testMaxLength_multipleWords() {
     // arrange
     Set<String> input = Set.of("by", "a", "commodius", "vicus");
