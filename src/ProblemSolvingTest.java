@@ -45,6 +45,18 @@ public class ProblemSolvingTest {
   }
 
   //  - test a set where none start with A
+  @Test
+  void testAllStartWithA_noneStartWithA()
+  {
+    // Arrange
+    Set<String> input = Set.of("toast", "Lemon", "tea");
+    // Act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // Assert
+    assertFalse(actual);
+
+  }
+
   //  - test a set with only a single element
   //  - more you can think of!
 
