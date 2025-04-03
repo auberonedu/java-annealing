@@ -75,8 +75,31 @@ public class ProblemSolving {
    * @param words a set of words
    * @return the maximum length of a word in the set
    */
-  public static int maxLength(Set<String> words) {
-    return 0;
+  public static int maxLength(Set<String> words) 
+  {
+    // If set is empty, return 0
+    if (words.size() == 0)
+    {
+      return 0;
+    }
+
+    // Variable to hold whatever the max length is
+    int maxNum = 0;
+
+    // Check each word, and compare the length against the maxNum variable
+    for (String word : words)
+    {
+      // If the length of the word is bigger than maxNum, make that the new maxNum
+      if (word.length() > maxNum)
+      {
+        maxNum =word.length();
+      }
+
+    }
+
+    // Return the maxNum
+    return maxNum;
+    
   }
 
  /**
