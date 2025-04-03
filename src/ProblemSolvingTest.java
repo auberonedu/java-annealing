@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,35 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_empty() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_noA() {
+    // arrange
+    Set<String> input = Set.of("Super", "Sonic", "Slam");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_secondLetterA() {
+    // arrange
+    Set<String> input = Set.of("false", "taste", "sat");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
@@ -34,6 +64,8 @@ public class ProblemSolvingTest {
   //  - test a set where none start with A
   //  - test a set with only a single element
   //  - more you can think of!
+
+
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -55,7 +87,25 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testHasEmptyString_long() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "", "utopia", "yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
 
+  @Test
+  void testHasEmptyString_LongSpaceNoEmpty() {
+    // arrange
+    Set<String> input = Set.of("armadillo", "                 a                    ", "utopia", "yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
@@ -65,6 +115,46 @@ public class ProblemSolvingTest {
   void testMaxLength_multipleWords() {
     // arrange
     Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(9, actual);
+  }
+
+  @Test
+  void testMaxLength_multipleWordsameLenghth() {
+    // arrange
+    Set<String> input = Set.of("Sea", "Tea", "Pee", "Key");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
+
+  @Test
+  void testMaxLength_lengthWithNumbers() {
+    // arrange
+    Set<String> input = Set.of("1", "100", "1000", "00001");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
+
+  @Test
+  void testMaxLength_emptyStringOnly() {
+    // arrange
+    Set<String> input = Set.of("", "    ", "       ", "                    ");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_mixEmptyAndSpacesBefore() {
+    // arrange
+    Set<String> input = Set.of( "                    ", "Coachella", "          Coachella");
     // act
     int actual = ProblemSolving.maxLength(input);
     // assert
@@ -82,4 +172,62 @@ public class ProblemSolvingTest {
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testMinLength_lengthWithNumbers() {
+    // arrange
+    Set<String> input = Set.of("0", "100", "1000", "100000001");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMinLength_multipleWordsameLenghth() {
+    // arrange
+    Set<String> input = Set.of("Sea", "Tea", "Pee", "Key");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
+
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+  @Test
+  void testMinLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_longEmptyString() {
+    // arrange
+    Set<String> input = Set.of("                                     ", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMinLength_longEmptyStringBeforechar() {
+    // arrange
+    Set<String> input = Set.of("                                     a", "two", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
 }
