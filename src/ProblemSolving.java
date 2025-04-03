@@ -39,14 +39,14 @@ public class ProblemSolving {
    */
   public static boolean hasEmptyString(Set<String> words) {
     if(words.isEmpty()){
-      return false;
+      return true;
     }
 
-    AtomicBoolean condition = new AtomicBoolean(true);
+    AtomicBoolean condition = new AtomicBoolean(false);
 
     words.forEach(word -> {
-      if(!word.isEmpty()){
-        condition.set(false);
+      if(word.isEmpty()){
+        condition.set(true);
       }
     });
 
