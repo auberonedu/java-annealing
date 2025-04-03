@@ -244,5 +244,17 @@ public class ProblemSolvingTest {
 
   }
 
+  @Test
+  void testMinLength_spaces()
+  {
+    // Arrange
+    Set<String> input = Set.of("        ");
+    // Act
+    int actual = ProblemSolving.minLength(input);
+    // Assert
+    assertEquals(0, actual);
+
+  }
+
 
 }

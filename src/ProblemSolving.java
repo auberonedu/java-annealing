@@ -129,9 +129,9 @@ public class ProblemSolving {
     for (String word : words)
     {
       // If the length of the word is smaller than minNum, make that the new minNum
-      if (word.length() < minNum)
+      if (word.trim().length() < minNum)
       {
-        minNum = word.length();
+        minNum = word.trim().length();
       }
 
     }
