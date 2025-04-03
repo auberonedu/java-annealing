@@ -190,4 +190,14 @@ public class ProblemSolvingTest {
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("Miku", "Shiroko", "Nene", "emu");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
+
 }
