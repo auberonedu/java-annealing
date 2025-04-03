@@ -7,6 +7,8 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 public class ProblemSolvingTest {
+
+  //examples
   @Test
   void testAllStartWithA_trueMixedCase() {
     // arrange
@@ -35,6 +37,7 @@ public class ProblemSolvingTest {
   //  - test a set with only a single element
   //  - more you can think of!
 
+
 //allStartWithA
   @Test
   void testAllStartWithA_falseNoneStartWithA() {
@@ -59,6 +62,7 @@ public class ProblemSolvingTest {
 
 //-----------------------------
 
+  //examples
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -82,6 +86,7 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
+
 
 //hasEmptyString
   @Test
@@ -107,6 +112,7 @@ void testHasEmptyString_trueAllEmptyStrings() {
 
 //-----------------------------
 
+  //examples
   @Test
   void testMaxLength_multipleWords() {
     // arrange
@@ -121,9 +127,10 @@ void testHasEmptyString_trueAllEmptyStrings() {
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
   
+
 //maxLength
 @Test
-void testMaxLength_trueOneWord() {
+void testMaxLength_oneWord() {
     // Arrange
     Set<String> input = Set.of("supercalifragilisticexpialidocious");
     // Act
@@ -133,13 +140,15 @@ void testMaxLength_trueOneWord() {
 }
 
 @Test
-void testMaxLength_trueLongestWordsTied() {
+void testMaxLength_longestWordsTied() {
     // Arrange
     Set<String> input = Set.of("magnificent", "tremendous", "fantastic");
     // Act
     int actual = ProblemSolving.maxLength(input);
     // Assert
     assertEquals(10, actual); // expected res = 10 characters since 2 are the same length
+
+}
 
 
 //-----------------------------
@@ -149,7 +158,27 @@ void testMaxLength_trueLongestWordsTied() {
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+
 //minLength
-
-
+@Test
+void testMinLength_singleCharacters() {
+    // Arrange
+    Set<String> input = Set.of("a", "b", "c");
+    // Act
+    int actual = ProblemSolving.minLength(input);
+    // Assert
+    assertEquals(1, actual); // expected res = 1
 }
+
+@Test
+void testMinLength_mixedLengths() {
+    // Arrange
+    Set<String> input = Set.of("dinosaur", "hello", "a", "Sarcosuchus");
+    // Act
+    int actual = ProblemSolving.minLength(input);
+    // Assert
+    assertEquals(1, actual); // expected res = 1
+}
+
+
+}//end ProblemSolvingTest.java
