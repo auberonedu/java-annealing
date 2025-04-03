@@ -17,6 +17,8 @@ public class ProblemSolving {
     for(String word : words) {
       if(word.startsWith("a")) {
         return true;
+      } else {
+        return false;
       }
     }
     return false;
