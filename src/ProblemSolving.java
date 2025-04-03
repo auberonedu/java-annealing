@@ -15,9 +15,7 @@ public class ProblemSolving {
     if(words.isEmpty()) return false;
 
     for(String word : words) {
-      if(word.startsWith("a")) {
-        return true;
-      } else if (!word.startsWith("a")){
+       if (!word.startsWith("a")){
         return false;
       }
     }
@@ -75,7 +73,7 @@ public class ProblemSolving {
     if(words.isEmpty()) return Integer.MAX_VALUE;
 
     int min = Integer.MAX_VALUE;
-    
+
     for (String word : words) {
         min = Math.min(min, word.length());
     }
