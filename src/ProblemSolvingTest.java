@@ -120,6 +120,36 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
+  @Test
+  void testHasEmptyString_falseOnly() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_falseNoneOneEmpty(){
+    // arrange
+    Set<String> input = Set.of("hurray");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_falseOnlySpace() {
+    // arrange
+    Set<String> input = Set.of(" ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
 
   @Test
   void testMaxLength_multipleWords() {
