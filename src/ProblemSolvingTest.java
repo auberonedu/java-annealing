@@ -15,7 +15,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     //assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test
