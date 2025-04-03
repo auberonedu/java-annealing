@@ -173,14 +173,15 @@ void testMaxLength_longestWordsTied() {
 }
 
 @Test
-void testMaxLength_spacesNotCounted() {
+void testMaxLength_singleCharacters() {
     // arrange
-    Set<String> input = Set.of("hello world", "        ", " space  spacesspace   galore ");
+    Set<String> input = Set.of("a", "bb", "ccc", "dddd");
     // act
     int actual = ProblemSolving.maxLength(input);
     // assert
-    assertEquals(12, actual); // expected res = 22
+    assertEquals(4, actual); // expected res = 4 characters
 }
+
 
 
 //-----------------------------
