@@ -7,6 +7,8 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 public class ProblemSolvingTest {
+  // ******************** TESTS for allStartsWithA ********************
+
   @Test
   void testAllStartWithA_trueMixedCase() {
     // arrange
@@ -83,6 +85,20 @@ public class ProblemSolvingTest {
   }
 
   //  - more you can think of!
+  @Test
+  void testAllStartWithA_emptyString()
+  {
+    // Arrange
+    Set<String> input = Set.of("");
+    // Act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // Assert
+    assertFalse(actual);
+
+  }
+
+
+  // ******************** TESTS for hasEmptyString ********************
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
