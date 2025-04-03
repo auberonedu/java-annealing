@@ -200,4 +200,13 @@ public class ProblemSolvingTest {
     assertEquals(3, actual);
   }
 
+  @Test
+  void testMinLength_emptySet() {
+    // arrange
+    Set<String> input = new HashSet<>();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
 }
