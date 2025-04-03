@@ -80,6 +80,27 @@ public class ProblemSolvingTest {
       assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_withEmptyStringsAndWithSpaces() {
+    // arrange
+    Set<String> input = Set.of("", " ", "  ");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_anEmptyStringAndStringsStartingWithA() {
+    // arrange
+    Set<String> input = Set.of("apple", "", "Andulusia");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual); // we expect true, because technically all the words in the set start with 'A'...
+                        // even with an empty string.
+  }
+
  // ---------------------------------------------------------------------
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -134,6 +155,36 @@ public class ProblemSolvingTest {
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
     assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_hasMultipleWhiteSpaceStrings() {
+    // arrange
+    Set<String> input = Set.of("", "       ", "  " , "\n\n", " ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_hasAnEmptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_withALongStringAndAnEmptyString() {
+    // arrange
+    Set<String> input = Set.of("The Salamander Ethology Project is going to be fun!", "", "♥♥♥");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
   }
 
 // ---------------------------------------------------------------------
@@ -191,6 +242,26 @@ public class ProblemSolvingTest {
     assertEquals(0, actual);
   }
 
+  @Test
+  void testMaxLength_withSpecialCharacters() {
+    // arrange
+    Set<String> input = Set.of("$#?!~", "-_-", "(-).(-)", ">.<");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(7, actual);
+  }
+
+  @Test
+  void testMaxLength_withWhiteSpace() {
+    // arrange
+    Set<String> input = Set.of(" ", "\n\n\n\n\n\n\n", "                    ");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(20, actual);
+  }
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
@@ -243,5 +314,25 @@ public class ProblemSolvingTest {
     int actual = ProblemSolving.minLength(input);
     // assert
     assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_withSpecialCharacters() {
+    // arrange
+    Set<String> input = Set.of("$#?!~", "-_-", "(-).(-)", ">.<");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
+
+  @Test
+  void testMinLength_withWhiteSpace() {
+    // arrange
+    Set<String> input = Set.of(" ", "\n\n\n\n\n\n\n", "                    ");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
   }
 }
