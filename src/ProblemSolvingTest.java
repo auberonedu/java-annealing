@@ -124,6 +124,17 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
+  @Test
+  void testHasEmptyString_spaces()
+  {
+    // Arrange
+    Set<String> input = Set.of("    ");
+    // Act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // Assert
+    assertTrue(actual);
+
+  }
 
 
   @Test
