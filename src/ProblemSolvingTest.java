@@ -76,6 +76,17 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  // test a set with only a single element with A in a set
+  @Test
+  void testAllStartWithA_oneWordWithA() {
+    // arrange
+    Set<String> input = Set.of("masked", "Miku", "alien");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
