@@ -28,6 +28,24 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_firstElementFalse(){
+    Set<String> input = Set.of("Salamander", "Arcanine");
+
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_lastElementFalse(){
+    Set<String> input = Set.of("Cow", "Salamander");
+
+    boolean result = ProblemSolving.allStartWithA(input);
+
+    assertFalse(result);
+  }
+
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
@@ -162,12 +180,33 @@ public class ProblemSolvingTest {
   }
 
 
+  @Test
+  void testMinLength_multipleWords() {
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+
+    int actual = ProblemSolving.minLength(input);
+
+    assertEquals(1, actual);
+  }
 
 
-  // TODO:
-  // Come up with more tests to thoroughly test maxLength
-  // Use your creativity here!
-    
+  @Test
+  void testMinLength_SameLengthMultipleWord() {
+    Set<String> input = Set.of("Fox", "dog", "Cat");
+
+    int result = ProblemSolving.minLength(input);
+
+    assertEquals(3, result);
+  }
+
+  @Test
+  void testMinLength_EmptySet() {
+    Set<String> input = new HashSet<>();
+
+    int result = ProblemSolving.minLength(input);
+
+    assertEquals(Integer.MAX_VALUE, result);
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
