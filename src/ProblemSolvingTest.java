@@ -88,9 +88,45 @@ public class ProblemSolvingTest {
   }
 
 
-  // TODO:
-  // Come up with more tests to thoroughly test hasEmptyString
-  // Use your creativity here!
+  @Test
+  void testHasEmptyString_allSpaces() {
+    // arrange
+    Set<String> input = Set.of("    ", "     ", "       ", "          ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testHasEmptyString_oneEmptyAndSpaces() {
+    // arrange
+    Set<String> input = Set.of("    ", "", "       ", "          ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_oneEmpty() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
 
 
   @Test
