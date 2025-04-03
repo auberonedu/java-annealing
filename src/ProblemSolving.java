@@ -49,6 +49,9 @@ public class ProblemSolving {
     int max = 0;
 
     for (String word : words) {
+
+  int lengthWithoutSpaces = word.replace(" ", "").length(); //makes it so the method doesn't count spaces
+
         if (word.length() > max) {
           max = word.length(); // updates the max if the word is longer than the previous max length
         }//end if

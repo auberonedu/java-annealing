@@ -61,6 +61,16 @@ public class ProblemSolvingTest {
       assertTrue(actual); //expected res = true
   }
   
+  @Test
+  void testAllStartWithA_falseMixedCase() {
+      // Arrange
+      Set<String> input = Set.of("aPPle", "Apricot", "banana", "Avocado");
+      // Act
+      boolean actual = ProblemSolving.allStartWithA(input);
+      // Assert
+      assertFalse(actual); // expected res = false
+  }
+  
 
 //-----------------------------
 
@@ -111,6 +121,16 @@ void testHasEmptyString_trueAllEmptyStrings() {
     assertTrue(actual); //expected res = true
 }
 
+@Test
+void testHasEmptyString_falseOnlySpaces() {
+    // Arrange
+    Set<String> input = Set.of(" ", "   ", "       ");
+    // Act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // Assert
+    assertFalse(actual); // expected res = false, not empty
+}
+
 
 //-----------------------------
 
@@ -152,6 +172,16 @@ void testMaxLength_longestWordsTied() {
 
 }
 
+@Test
+void testMaxLength_spacesNotCounted() {
+    // arrange
+    Set<String> input = Set.of("hello world", "        ", " space  spacesspace   galore ");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(12, actual); // expected res = 22
+}
+
 
 //-----------------------------
   
@@ -169,7 +199,7 @@ void testMinLength_singleCharacters() {
     // Act
     int actual = ProblemSolving.minLength(input);
     // Assert
-    assertEquals(1, actual); // expected res = 1
+    assertEquals(1, actual); // expected res = 1 character
 }
 
 @Test
@@ -179,7 +209,17 @@ void testMinLength_mixedLengths() {
     // Act
     int actual = ProblemSolving.minLength(input);
     // Assert
-    assertEquals(1, actual); // expected res = 1
+    assertEquals(1, actual); // expected res = 1 character
+}
+
+@Test
+void testMinLength_longWords() {
+    // Arrange
+    Set<String> input = Set.of("encyclopedia", "hippopotamus", "constellation");
+    // Act
+    int actual = ProblemSolving.minLength(input);
+    // Assert
+    assertEquals(12, actual); // expected res = 12 characters
 }
 
 
