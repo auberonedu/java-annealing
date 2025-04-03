@@ -2,6 +2,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -92,7 +94,7 @@ public class ProblemSolvingTest {
   @Test
 void testHasEmptyString_trueMultipleEmptyStrings() {
     // Arrange
-    Set<String> input = Set.of("", "apple", "", "banana");
+    Set<String> input = new HashSet<>(List.of("", "apple", "", "banana")); // allows multiple of the same strings aka multiple empty strings
     // Act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // Assert
@@ -102,7 +104,7 @@ void testHasEmptyString_trueMultipleEmptyStrings() {
 @Test
 void testHasEmptyString_trueAllEmptyStrings() {
     // Arrange
-    Set<String> input = Set.of("", "", "");
+    Set<String> input = new HashSet<>(List.of("", "", "")); // allows multiple of the same strings aka empty strings
     // Act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // Assert
@@ -142,11 +144,11 @@ void testMaxLength_oneWord() {
 @Test
 void testMaxLength_longestWordsTied() {
     // Arrange
-    Set<String> input = Set.of("magnificent", "tremendous", "fantastic");
+    Set<String> input = Set.of("magnificent", "tremendous", "knickknacks");
     // Act
     int actual = ProblemSolving.maxLength(input);
     // Assert
-    assertEquals(10, actual); // expected res = 10 characters since 2 are the same length
+    assertEquals(11, actual); // expected res = 11 characters
 
 }
 
