@@ -35,6 +35,30 @@ public class ProblemSolvingTest {
   //  - test a set with only a single element
   //  - more you can think of!
 
+//allStartWithA
+  @Test
+  void testAllStartWithA_falseNoneStartWithA() {
+      // Arrange
+      Set<String> input = Set.of("banana", "cherry", "dog");
+      // Act
+      boolean actual = ProblemSolving.allStartWithA(input);
+      // Assert
+      assertFalse(actual); //expected res = false
+  }
+  
+  @Test
+  void testAllStartWithA_trueSingleElement() {
+      // arrange
+      Set<String> input = Set.of("Apple");
+      // act
+      boolean actual = ProblemSolving.allStartWithA(input);
+      // assert
+      assertTrue(actual); //expected res = true
+  }
+  
+
+//-----------------------------
+//hasEmptyString
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
@@ -55,12 +79,13 @@ public class ProblemSolvingTest {
     assertTrue(actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
-
+  
+//-----------------------------
+//maxLength
   @Test
   void testMaxLength_multipleWords() {
     // arrange
@@ -71,11 +96,13 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
     
+
+//-----------------------------
+//minLength
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
