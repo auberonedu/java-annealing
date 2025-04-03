@@ -31,13 +31,33 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
   //  - test an empty set DONE
-  //  - test a set where none start with A
-  //  - test a set with only a single element
+  //  - test a set where none start with A DONE
+  //  - test a set with only a single element DONE
   //  - more you can think of!
   @Test
   void testAllStartTestWithA_emptySet() {
     // arrange
     Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartTestWithA_allElementsFalse() {
+    // arrange
+    Set<String> input = Set.of("banana","Chancla","Filipino");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartTestWithA_singleElementFalse() {
+    // arrange
+    Set<String> input = Set.of("efren");
     // act
     boolean actual = ProblemSolving.allStartWithA(input);
     // assert
