@@ -27,7 +27,7 @@ public class ProblemSolving {
       if (wordList.get(i).startsWith("A") || wordList.get(i).startsWith("a")) {
         result = true;
       } else{
-        result = false;
+        return false;
       }
     }
     return result;
