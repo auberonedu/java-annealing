@@ -142,25 +142,25 @@ public class ProblemSolvingTest {
     assertEquals(5, actual);
   }
 
-//   @Test 
-//   void tesMaxLength_oneWord() {
-//     // arrange
-//     Set<String> input = Set.of("grip");
-//     // act
-//     int actual = ProblemSolving.maxLength(input);
-//     // assert
-//     assertEquals(4, actual);
-//   }
+  @Test 
+  void tesMaxLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("grip");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(4, actual);
+  }
 
-//   @Test 
-//   void tesMaxLength_spaces() {
-//     // arrange
-//     Set<String> input = Set.of("   ", " ", "", "      ");
-//     // act
-//     int actual = ProblemSolving.maxLength(input);
-//     // assert
-//     assertEquals(6, actual);
-//   }
+  @Test 
+  void tesMaxLength_spaces() {
+    // arrange
+    Set<String> input = Set.of("   ", " ", "", "      ");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(6, actual);
+  }
 
   
   
