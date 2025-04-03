@@ -22,12 +22,15 @@ public class ProblemSolving {
     // convert set into a list to get specific index
     List<String> wordList = new ArrayList<>(words);
 
-    for (int i = 0; i < wordList.size(); i++) {
+    boolean result = false;
+    for(int i = 0; i < wordList.size(); i++) {
       if (wordList.get(i).startsWith("A") || wordList.get(i).startsWith("a")) {
-        return true;
+        result = true;
+      } else{
+        result = false;
       }
     }
-    return false;
+    return result;
   }
 
   /**
