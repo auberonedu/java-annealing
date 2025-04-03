@@ -138,11 +138,11 @@ public class ProblemSolvingTest {
   @Test
   void testMaxLength_whiteSpaces() {
     // arrange
-    Set<String> input = Set.of("Hello", "                     ", "<=Bruh");
+    Set<String> input = Set.of("Hello", "                     ", "Bruh");
     // act
     int actual = ProblemSolving.maxLength(input);
     // assert
-    assertEquals(6, actual);
+    assertEquals(21, actual);
   }
     
   
@@ -151,4 +151,33 @@ public class ProblemSolvingTest {
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("by", "a", "commodius", "vicus");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(1, actual);
+  }
+
+  @Test
+  void testMinLength_noWords() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(Integer.MAX_VALUE, actual);
+  }
+
+  @Test
+  void testMinLength_whiteSpaces() {
+    // arrange
+    Set<String> input = Set.of("Hello", "               ", "Cmon", "yo");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(2, actual);
+  }
 }
