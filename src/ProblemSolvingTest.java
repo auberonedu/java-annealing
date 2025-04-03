@@ -209,4 +209,14 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(Integer.MAX_VALUE, actual);
   }
+
+  @Test
+  void testMinLength_oneElement() {
+    // arrange
+    Set<String> input = Set.of("Hatsune");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(7, actual);
+  }
 }
