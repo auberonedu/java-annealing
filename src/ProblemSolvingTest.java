@@ -31,8 +31,8 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
-  // - test an empty set
 
+  // - test an empty set
   @Test
   void testAllStartWithA_emptySet() {
     // arrange
@@ -44,6 +44,15 @@ public class ProblemSolvingTest {
   }
 
   // - test a set where none start with A
+  @Test
+  void testAllStartWithA_noA() {
+    // arrange
+    Set<String> input = Set.of("blue", "Miku", "underground");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
   // - test a set with only a single element
   // - more you can think of!
 
