@@ -36,13 +36,13 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
   @Test
-  void testAllStartsWithA_falseemptySet() {
+  void testAllStartsWithA_falseEmptySet() {
     // arrange
     Set<String> input = Set.of();
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
-    assertFalse(actual);
+    assertTrue(actual);
   }
 
   @Test
@@ -50,7 +50,7 @@ public class ProblemSolvingTest {
     // arrange
     Set<String> input = Set.of("lion", "deer", "elephant");
     // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
+    boolean actual = ProblemSolving.allStartWithA(input);
     // assert
     assertFalse(actual);
   }
@@ -107,7 +107,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
+    assertFalse(actual);
   }
 
   @Test
@@ -117,7 +117,7 @@ public class ProblemSolvingTest {
     // act
     boolean actual = ProblemSolving.hasEmptyString(input);
     // assert
-    assertTrue(actual);
+    assertFalse(actual);
   }
 
   @Test
