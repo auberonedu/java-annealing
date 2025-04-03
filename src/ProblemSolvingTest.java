@@ -63,6 +63,15 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+  void testAllStartWithA_trueWhiteSpaceHasA(){
+    Set<String> input = Set.of("     a     ", "Escape", "Code");
+
+    boolean actual = ProblemSolving.allStartWithA(input);
+
+    assertFalse(actual);
+  }
+
 
 
   @Test
@@ -84,6 +93,7 @@ public class ProblemSolvingTest {
     // assert
     assertTrue(actual);
   }
+
 
 
   // TODO:
