@@ -144,10 +144,39 @@ public class ProblemSolvingTest {
     // assert
     assertEquals(0, actual);
   }
+
+  @Test
+  void testMaxLength_oneWord() {
+    // arrange
+    Set<String> input = Set.of("one");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
+
+  @Test
+  void testMaxLength_emptyString() {
+    // arrange
+    Set<String> input = Set.of("");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
 
+  @Test
+  void testMinLength_multipleWords() {
+    // arrange
+    Set<String> input = Set.of("Watermelon", "spider", "Two");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(3, actual);
+  }
 }
