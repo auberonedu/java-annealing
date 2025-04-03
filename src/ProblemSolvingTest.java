@@ -200,11 +200,25 @@ public class ProblemSolvingTest {
     assertEquals(0, actual);
 
   }
-    
   
+  
+  // ******************** TESTS for minLength ********************
+
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+  @Test
+  void testMinLength_multipleWords()
+  {
+    // Arrange
+    Set<String> input = Set.of("Bulbasaur", "Ivysaur", "Venusaur");
+    // Act
+    int actual = ProblemSolving.minLength(input);
+    // Assert
+    assertEquals(7, actual);
+
+  }
+
 
 }
