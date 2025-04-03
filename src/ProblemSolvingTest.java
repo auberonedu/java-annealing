@@ -37,7 +37,7 @@ public class ProblemSolvingTest {
 
 
   @Test
-  void testEmptySet_trueSetEmpty(){
+  void testAllStartWithA_trueSetEmpty(){
     Set<String> input = Set.of();
 
     boolean actual = ProblemSolving.allStartWithA(input);
@@ -46,7 +46,7 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testSingleElement_trueSingleHasA(){
+  void testAllStartWithA_trueSingleHasA(){
     Set<String> input = Set.of("Armadillo");
 
     boolean actual = ProblemSolving.allStartWithA(input);
@@ -55,13 +55,15 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testAllElements_falseNoneHaveA(){
+  void testAllStartWithA_falseNoneHaveA(){
     Set<String> input = Set.of("Puke", "Escape", "Code");
 
     boolean actual = ProblemSolving.allStartWithA(input);
 
     assertFalse(actual);
   }
+
+
 
   @Test
   void testHasEmptyString_falseAllNonEmpty() {
@@ -88,6 +90,26 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
+  @Test
+  void testHasEmptyString_trueWhiteSpaces() {
+    // arrange
+    Set<String> input = Set.of("                     ", "dasdasd", "utopia", "yeah");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testHasEmptyString_falseEmptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
 
   @Test
   void testMaxLength_multipleWords() {
@@ -99,10 +121,29 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
-
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
+
+  @Test
+  void testMaxLength_noWords() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_whiteSpaces() {
+    // arrange
+    Set<String> input = Set.of("Hello", "                     ", "<=Bruh");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(6, actual);
+  }
     
   
   // TODO:

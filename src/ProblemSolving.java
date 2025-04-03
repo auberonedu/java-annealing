@@ -31,7 +31,7 @@ public class ProblemSolving {
    */
   public static boolean hasEmptyString(Set<String> words) {
     for (String str : words) {
-      if(str.trim() == ""){
+      if(str.replaceAll(" ", "").equals("")){
         return true;
       }
     }
@@ -48,12 +48,12 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    int maxLength = 0;
+    int maxLength = Integer.MIN_VALUE;
     if(words.size() == 0){
       return 0;
     }
     for (String str : words) {
-      if(str.length() > maxLength){
+      if(str.replaceAll(" ", "").length() > maxLength){
         maxLength = str.length();
       }
     }
