@@ -36,6 +36,36 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
   @Test
+  void testAllStartWithA_singleElement() {
+    // arrange
+    Set<String> input = Set.of("Anna");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_noWordsStartWithA() {
+    // arrange
+    Set<String> input = Set.of("Banana", "Person", "Friend", "Games");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
+  void testAllStartWithA_falseEmptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
   void testHasEmptyString_falseAllNonEmpty() {
     // arrange
     Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
@@ -60,6 +90,16 @@ public class ProblemSolvingTest {
   // Come up with more tests to thoroughly test hasEmptyString
   // Use your creativity here!
 
+  @Test
+  void testHasEmptyString_falseHasCharacter() {
+    // arrange
+    Set<String> input = Set.of(" ");
+    // act
+    boolean actual = ProblemSolving.hasEmptyString(input);
+    // assert
+    assertFalse(actual);
+  }
+
 
   @Test
   void testMaxLength_multipleWords() {
@@ -75,11 +115,39 @@ public class ProblemSolvingTest {
   // TODO:
   // Come up with more tests to thoroughly test maxLength
   // Use your creativity here!
+  @Test
+  void testMaxLength_longestWhiteSpace() {
+    // arrange
+    Set<String> input = Set.of("hi", "     ");
+    // act
+    int actual = ProblemSolving.maxLength(input);
+    // assert
+    assertEquals(5, actual);
+  }
     
   
   // TODO:
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+  @Test
+  void testMaxLength_shortestWordWithZeroCharacters() {
+    // arrange
+    Set<String> input = Set.of("", "hi", "hello", "goodbye", "w");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testMaxLength_shortestWordWithEmptyStrings() {
+    // arrange
+    Set<String> input = Set.of("", " ", "  ", "    ", "     ");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
 
 }
