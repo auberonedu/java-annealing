@@ -36,6 +36,26 @@ public class ProblemSolvingTest {
   //  - more you can think of!
 
   @Test
+  void testAllStartWithA_singleElement() {
+    // arrange
+    Set<String> input = Set.of("Anna");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+  }
+
+  @Test
+  void testAllStartWithA_noWordsStartWithA() {
+    // arrange
+    Set<String> input = Set.of("Banana", "Person", "Friend", "Games");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+  }
+
+  @Test
   void testAllStartWithA_falseEmptySet() {
     // arrange
     Set<String> input = Set.of();
