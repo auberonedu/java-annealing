@@ -141,7 +141,7 @@ public class ProblemSolvingTest {
   }
 
   @Test
-  void testMaxLength_shortestWordBeingANumber() {
+  void testMaxLength_shortestWordWithEmptyStrings() {
     // arrange
     Set<String> input = Set.of("", " ", "  ", "    ", "     ");
     // act
