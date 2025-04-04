@@ -88,6 +88,6 @@ public class ProblemSolving {
       shortest = i.length();
     }
   }
-    return Integer.MAX_VALUE;
+    return shortest;
   }
 }
