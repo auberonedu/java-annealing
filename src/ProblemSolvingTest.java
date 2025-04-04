@@ -130,5 +130,14 @@ public class ProblemSolvingTest {
   // Come up with ALL tests to thoroughly test minLength
   // Use your creativity here, and consider looking back at the maxLength
   // tests for inspiration
+  @Test
+  void testMaxLength_shortestWordWithZeroCharacters() {
+    // arrange
+    Set<String> input = Set.of("", "hi", "hello", "goodbye", "w");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
 
 }
