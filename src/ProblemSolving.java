@@ -17,7 +17,7 @@ public class ProblemSolving {
               return false;
           }
       }
-      return false;
+      return true;
   }
 
   /**
@@ -29,7 +29,12 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
-    return false;
+    for (String word : words) {
+      if (word.length() == 0) {
+          return true;
+      }
+  }
+  return false;
   }
 
   /**
@@ -41,7 +46,15 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+    int max = 0;
+
+    for (String word : words) {
+        if (word.length() > max) {
+            max = word.length();
+        }
+    }
+
+    return max;
   }
 
  /**
@@ -53,6 +66,19 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+    if (words.isEmpty()) {
+      return Integer.MAX_VALUE;
+  }
+
+  int min = Integer.MAX_VALUE;
+
+  for (String word : words) {
+      if (word.length() < min) {
+          min = word.length();
+      }
+  }
+
+  return min;
+
   }
 }
