@@ -140,4 +140,14 @@ public class ProblemSolvingTest {
     assertEquals(0, actual);
   }
 
+  @Test
+  void testMaxLength_shortestWordBeingANumber() {
+    // arrange
+    Set<String> input = Set.of("", " ", "  ", "    ", "     ");
+    // act
+    int actual = ProblemSolving.minLength(input);
+    // assert
+    assertEquals(0, actual);
+  }
+
 }
