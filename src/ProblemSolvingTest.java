@@ -96,7 +96,7 @@ public class ProblemSolvingTest {
 
   @Test
   void testHasEmptyString_multipleEmptyStrings() {
-    Set<String> input = Set.of("", "", "hello");
+    Set<String> input = Set.of(" ", "", "hello");
     boolean actual = ProblemSolving.hasEmptyString(input);
     assertTrue(actual);
   }
