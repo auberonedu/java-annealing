@@ -18,10 +18,10 @@ public class ProblemSolving {
 
     for (String i : words) {
       if (i.charAt(0) != 'A' && i.charAt(0) != 'a') {
-        return true;
+        return false;
       }
     }
-    return false;
+    return true;
   }
 
 
