@@ -12,7 +12,17 @@ public class ProblemSolving {
    * @return true if every word starts with A (case-insensitive), false otherwise.
    */
   public static boolean allStartWithA(Set<String> words) {
-    return false;
+    
+    if(words == null){
+      return true;
+    }
+    
+    for(var word : words){
+      if(Character.toUpperCase(word.charAt(0)) != 'A'){
+        return false;
+      }
+    }
+    return true;
   }
 
   /**
@@ -24,6 +34,14 @@ public class ProblemSolving {
    * @return true if there is at least one empty string, false otherwise
    */
   public static boolean hasEmptyString(Set<String> words) {
+    if(words == null){
+      return false;
+    }
+    for(var word : words){
+      if(word.isEmpty()){
+        return true;
+      }
+    }
     return false;
   }
 
@@ -36,7 +54,16 @@ public class ProblemSolving {
    * @return the maximum length of a word in the set
    */
   public static int maxLength(Set<String> words) {
-    return 0;
+    if(words == null){
+      return 0;
+    }
+    String longestWord = "";
+    for(var word : words){
+      if(word.length() > longestWord.length()){
+        longestWord = word;
+      }
+    }
+    return longestWord.length();
   }
 
  /**
@@ -48,6 +75,18 @@ public class ProblemSolving {
    * @return the minimum length of a word in the set
    */
   public static int minLength(Set<String> words) {
-    return Integer.MAX_VALUE;
+
+    if(words == null){
+      return Integer.MAX_VALUE;
+    }
+    String shortestWord = "";
+    for(var word : words){
+      if(word.length() < shortestWord.length()){
+        shortestWord = word;
+      }
+    }
+
+    return shortestWord.length();
+
   }
 }

@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,50 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+void testAllStartWithA_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual); // vacuously true
+}
+
+@Test
+void testAllStartWithA_noneStartWithA() {
+    // arrange
+    Set<String> input = Set.of("banana", "cherry", "durian");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+}
+
+@Test
+void testAllStartWithA_oneElementStartsWithA() {
+    // arrange
+    Set<String> input = Set.of("avocado");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+}
+
+@Test
+void testAllStartWithA_oneElementNotStartingWithA() {
+    // arrange
+    Set<String> input = Set.of("broccoli");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+}
+
+
+
+
+
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
@@ -35,15 +80,7 @@ public class ProblemSolvingTest {
   //  - test a set with only a single element
   //  - more you can think of!
 
-  @Test
-  void testHasEmptyString_falseAllNonEmpty() {
-    // arrange
-    Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
-    // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
-    // assert
-    assertFalse(actual);
-  }
+
 
   @Test
   void testHasEmptyString_trueOneEmpty() {
@@ -62,6 +99,25 @@ public class ProblemSolvingTest {
 
 
   @Test
+  void testHasEmptyString_trueWhenEmptyPresent() {
+      Set<String> input = Set.of("apple", "", "banana");
+      boolean result = ProblemSolving.hasEmptyString(input);
+      assertTrue(result);
+  }
+
+  @Test
+  void testHasEmptyString_falseWhenNoEmptyPresent() {
+      Set<String> input = Set.of("apple", "banana", "cherry");
+      boolean result = ProblemSolving.hasEmptyString(input);
+      assertFalse(result);
+  }
+  void testHasEmptyString_nullSet() {
+    Set<String> input = null;
+    boolean result = ProblemSolving.hasEmptyString(input);
+    assertFalse(result);
+}
+
+  @Test
   void testMaxLength_multipleWords() {
     // arrange
     Set<String> input = Set.of("by", "a", "commodius", "vicus");
@@ -71,6 +127,19 @@ public class ProblemSolvingTest {
     assertEquals(9, actual);
   }
 
+  @Test
+    void testMaxLength_typicalSet() {
+        Set<String> input = Set.of("apple", "banana", "cherry");
+        int result = ProblemSolving.maxLength(input);
+        assertEquals(6, result); // "banana"
+    }
+
+    @Test
+    void testMaxLength_setWithEmptyString() {
+        Set<String> input = Set.of("a", "", "bb");
+        int result = ProblemSolving.maxLength(input);
+        assertEquals(2, result); // "bb"
+    }
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength
