@@ -99,6 +99,25 @@ void testAllStartWithA_oneElementNotStartingWithA() {
 
 
   @Test
+  void testHasEmptyString_trueWhenEmptyPresent() {
+      Set<String> input = Set.of("apple", "", "banana");
+      boolean result = ProblemSolving.hasEmptyString(input);
+      assertTrue(result);
+  }
+
+  @Test
+  void testHasEmptyString_falseWhenNoEmptyPresent() {
+      Set<String> input = Set.of("apple", "banana", "cherry");
+      boolean result = ProblemSolving.hasEmptyString(input);
+      assertFalse(result);
+  }
+  void testHasEmptyString_nullSet() {
+    Set<String> input = null;
+    boolean result = ProblemSolving.hasEmptyString(input);
+    assertFalse(result);
+}
+
+  @Test
   void testMaxLength_multipleWords() {
     // arrange
     Set<String> input = Set.of("by", "a", "commodius", "vicus");
@@ -108,6 +127,19 @@ void testAllStartWithA_oneElementNotStartingWithA() {
     assertEquals(9, actual);
   }
 
+  @Test
+    void testMaxLength_typicalSet() {
+        Set<String> input = Set.of("apple", "banana", "cherry");
+        int result = ProblemSolving.maxLength(input);
+        assertEquals(6, result); // "banana"
+    }
+
+    @Test
+    void testMaxLength_setWithEmptyString() {
+        Set<String> input = Set.of("a", "", "bb");
+        int result = ProblemSolving.maxLength(input);
+        assertEquals(2, result); // "bb"
+    }
 
   // TODO:
   // Come up with more tests to thoroughly test maxLength

@@ -38,7 +38,7 @@ public class ProblemSolving {
       return false;
     }
     for(var word : words){
-      if(word != ""){
+      if(word.isEmpty()){
         return true;
       }
     }
