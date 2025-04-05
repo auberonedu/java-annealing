@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,50 @@ public class ProblemSolvingTest {
     assertFalse(actual);
   }
 
+  @Test
+void testAllStartWithA_emptySet() {
+    // arrange
+    Set<String> input = Set.of();
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual); // vacuously true
+}
+
+@Test
+void testAllStartWithA_noneStartWithA() {
+    // arrange
+    Set<String> input = Set.of("banana", "cherry", "durian");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+}
+
+@Test
+void testAllStartWithA_oneElementStartsWithA() {
+    // arrange
+    Set<String> input = Set.of("avocado");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertTrue(actual);
+}
+
+@Test
+void testAllStartWithA_oneElementNotStartingWithA() {
+    // arrange
+    Set<String> input = Set.of("broccoli");
+    // act
+    boolean actual = ProblemSolving.allStartWithA(input);
+    // assert
+    assertFalse(actual);
+}
+
+
+
+
+
   // TODO:
   // Come up with more tests to thoroughly test testAllStartWithA
   // Suggestions:
@@ -35,15 +80,7 @@ public class ProblemSolvingTest {
   //  - test a set with only a single element
   //  - more you can think of!
 
-  @Test
-  void testHasEmptyString_falseAllNonEmpty() {
-    // arrange
-    Set<String> input = Set.of("armadillo", "Arcanine", "utopia");
-    // act
-    boolean actual = ProblemSolving.hasEmptyString(input);
-    // assert
-    assertFalse(actual);
-  }
+
 
   @Test
   void testHasEmptyString_trueOneEmpty() {

@@ -18,7 +18,7 @@ public class ProblemSolving {
     }
     
     for(var word : words){
-      if(word.charAt(0) != 'A'){
+      if(Character.toUpperCase(word.charAt(0)) != 'A'){
         return false;
       }
     }
